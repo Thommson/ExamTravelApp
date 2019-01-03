@@ -5,7 +5,8 @@ import Profile from './components/Profile';
 import CreateTrip from './components/CreateTrip';
 import Error404 from './components/Error404';
 import Navbar from './components/ui/Navbar'
-
+import Login from './components/Login';
+import Register from './components/Register'
 class App extends Component {
   render() {
     return (
@@ -13,6 +14,8 @@ class App extends Component {
         <div>
           <Navbar />
           <Switch>
+            <Route path='/Register' component={ Register } />
+            <Route path='/Login' component={ Login } />
             <Route path='/' component={ Explore } exact />
             <Route path='/Explore' component={ Explore } />
             <Route path='/Profile' component={ Profile } />
