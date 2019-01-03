@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-class CreateTrip extends Component {
+class Error404 extends Component {
   render() {
     return (
       <div>
-      CreateTrip Page
+      Error404 Page
       </div>
     );
   }
 }
 
-export default CreateTrip;
+export default Error404;

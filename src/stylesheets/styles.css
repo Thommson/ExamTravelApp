@@ -1,0 +1,21 @@
+*{
+  padding: 0;
+  margin: 0;
+}
+/* Navbar */
+.Navbar{
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: grey;
+}
+.Navbar-item{
+display: inline-block;
+width: calc(100% / 3);
+float: left;
+text-align: center;
+padding: 4vh;
+color: white;
+box-sizing: border-box;
+border: 1px solid white;
+}
