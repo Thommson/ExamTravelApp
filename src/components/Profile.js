@@ -4,7 +4,7 @@ class Profile extends Component {
   render() {
     return (
       <div>
-      Profile Page
+      Profile Page Maria was here!
       </div>
     );
   }
