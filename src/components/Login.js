@@ -6,17 +6,21 @@ class Login extends Component {
 
       <div className="container-fluid green-background">
         <div className="row">
-          <h1 className="col">StudyLife</h1>
+          <div className="col">
+            <h1 className="login-title-placement">StudyLife</h1>
+          </div>
         </div>
         <div className="row">
           <div className="col login-card">
-            <div className="row logo-placement">
-              <div className="col">
-                <img src="images/studylife_logo.png" className="logo"/>
+            <div className="row ">
+              <div className="col logo-placement">
+                <img src="images/studylife_logo.png" alt="" className="logo"/>
               </div>
             </div>
             <div className="row">
-              <h3 className="col">Login</h3>
+              <div className="col">
+                <h3 className="login-span-placement">Login</h3>
+              </div>
             </div>
             <div className="row">
               <div className="col">

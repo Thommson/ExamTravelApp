@@ -14,7 +14,7 @@ display: inline-block;
 width: calc(100% / 3);
 float: left;
 text-align: center;
-padding: 4vh;
+padding: 3vh 0;
 color: white;
 box-sizing: border-box;
 border: 1px solid white;
@@ -27,20 +27,38 @@ border: 1px solid white;
   height: 100vh;
   background: linear-gradient(0deg, #F1F7F6 60%, #00C3B6 60%);
 }
+.login-title-placement{
+  text-align: center;
+  height: 0;
+  padding: 10vh 0 16vh 0;
+  color: white;
+}
+.login-span-placement{
+  text-align: center;
+  height: 0;
+  padding: 10vh 0;
+}
 .login-card{
-  position: relative;
-  background-color: red;
+  background-color: white;
   margin: 5%;
+  border-radius: 4%;
 }
 .logo{
-  height: 100px;
+
 }
 .logo-placement{
+  position: relative;
+}
+.logo{
+  width: 80px;
+  background: #00C3B6;
+  border-radius: 100px;
   position: absolute;
   top: 0;
   left: 50%;
   transform: translate(-50%, -60%);
 }
+
 /* Profile page */
 
 body{
