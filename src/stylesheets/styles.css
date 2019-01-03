@@ -19,3 +19,6 @@ color: white;
 box-sizing: border-box;
 border: 1px solid white;
 }
+.Width100{
+  width: 100%;
+}
