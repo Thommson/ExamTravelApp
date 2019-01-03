@@ -4,7 +4,7 @@ class Explore extends Component {
   render() {
     return (
       <div className="container-fluid">
-      Explore Page
+      Explore Page yayeet
       </div>
     );
   }
