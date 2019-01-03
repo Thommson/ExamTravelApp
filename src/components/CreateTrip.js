@@ -13,11 +13,11 @@ class CreateTrip extends Component {
         <div className="row">
           <div className="col">
             <label htmlFor="country">Country</label><br></br>
-            <input type="text" id="country" placeholder="Country"/>
+            <input type="text" id="country" placeholder="Country" className="width100"/>
           </div>
           <div className="col">
             <label htmlFor="city">City</label><br></br>
-            <input type="text" id="city" placeholder="City"/>
+            <input type="text" id="city" placeholder="City" className="width100"/>
           </div>
         </div>
         <div className="row">
@@ -26,13 +26,13 @@ class CreateTrip extends Component {
         <div className="row">
           <div className="col">
             <label htmlFor="title">Title</label><br></br>
-            <input type="text" id="title" placeholder="Title" className="Width100"/>
+            <input type="text" id="title" placeholder="Title" className="width100"/>
           </div>
         </div>
         <div className="row">
           <div className="col">
             <label htmlFor="description">Description</label><br></br>
-            <input type="text" id="description" placeholder="Description" className="Width100"/>
+            <input type="text" id="description" placeholder="Description" className="width100"/>
           </div>
         </div>
         <div className="row">
@@ -49,7 +49,9 @@ class CreateTrip extends Component {
         </div>
         <ActivitySelector />
         <div className="row">
-          <button className="col">Let's Go!</button>
+          <div className="col">
+            <button className="width100">Let's Go!</button>
+          </div>
         </div>
       </div>
     );
