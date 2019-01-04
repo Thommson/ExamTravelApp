@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 
 class ExploreCard extends Component {
-  render() {
+
+  constructor(props){
+    super(props);
+    this.tripCountry = props.tripCountry;
+    this.tripId = props.tripId;
+  }
+  render(props) {
     return (
         <div className="card">
         <div className="row">
             <div className="col">
-                <img src="images/norway.jpg" className="cardImg" />
+                <img src="images/norway.jpg" className="cardImg" alt=""/>
             </div>
         </div>
 
@@ -18,7 +24,7 @@ class ExploreCard extends Component {
             </div>
 
             <div className="col">
-                <img src="images/flag.png" className="flagImg" />
+                <img src="images/flag.png" className="flagImg" alt=""/>
             </div>
         </div>
 
@@ -37,10 +43,14 @@ class ExploreCard extends Component {
             <div className="col">
                 <span className="usernameItalic">Timmy73</span>
             </div>
-        </div>                 
+        </div>
     </div>
     );
   }
+}
+
+ExploreCard.propTypes={
+  tripCountry: PropTypes.string
 }
 
 export default ExploreCard;

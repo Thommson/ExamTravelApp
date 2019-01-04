@@ -4,6 +4,27 @@ import ActivitySelector from './ui/ActivitySelector';
 import ExploreCard from './ui/ExploreCard';
 
 class Explore extends Component {
+
+  constructor(props){
+    super(props);
+
+    this.state = {
+      allTrips: [
+        {
+          id:"1",
+          tripCountry: "Canada"
+        },
+        {
+          id:"2",
+          tripCountry: "Germany"
+        },
+        {
+          id:"3",
+          tripCountry: "Sweden"
+        },
+      ],
+    }
+  }
   render() {
     return (
       <div className="container-fluid">
@@ -13,12 +34,12 @@ class Explore extends Component {
             </div>
 
             <div className="col">
-            <SearchField 
+            <SearchField
               placeholder='Search country, city'
               classNames="exploreSearch"
             />
             </div>
-            
+
         </div>
 
         <div className="row grayBackground">
@@ -42,8 +63,16 @@ class Explore extends Component {
               <span className="profTripPin">Followed</span>
           </div>
         </div>
+        {
+          this.state.allTrips.map((trip) => {
+            return(
+              <ExploreCard tripCountry={trip.tripCountry} tripId={trip.id} key={trip.id} />
+            )
 
-        <ExploreCard />
+          })
+
+        }
+
       </div>
     );
   }
