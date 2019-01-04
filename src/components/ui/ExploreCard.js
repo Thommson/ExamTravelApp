@@ -10,13 +10,13 @@ const ExploreCard = ({trip}) => {
         </div>
 
         <div className="row cardDescrip">
-            <div className="col-m">
-                <span className="countryVisited">{trip.country}{trip.city}</span>
+            <div className="col-10">
+                <span className="countryVisited">{trip.country}, {trip.city}</span>
                 <p>Hiked a mountain and saw beautiful nature. </p>
             </div>
 
-            <div className="col">
-                <img src="images/flag.png" className="flagImg" alt=""/>
+            <div className="col-2 flagImgPadding">
+                <img src="images/flag.png" className="flagImgTrip" alt=""/>
             </div>
         </div>
 

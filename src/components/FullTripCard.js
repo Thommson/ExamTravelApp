@@ -9,7 +9,7 @@ const FullTripCard = (props) => {
   const { trip } = props;
   if(trip){
     return(
-      <div className="container-fluid">
+      <div className="container-fluid whiteBG">
         <div className="row greenBG">
             <div className="col userCol">
                 <img src="images/profilepic.png" className="userImg" alt=""/>
@@ -24,8 +24,8 @@ const FullTripCard = (props) => {
         </div>
 
         <div className="row greenBG">
-             <div className="col">
-                <img src="images/flag.png" className="flagImg flagFullCard" alt=""/>
+             <div className="col flagPlacement">
+                <img src="images/flag.png" className="flagImgFullTrip" alt=""/>
             </div>
         </div>
 

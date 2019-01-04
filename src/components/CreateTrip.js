@@ -20,9 +20,13 @@ class CreateTrip extends Component {
   }
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className="container-fluid">
+
+      <form onSubmit={this.handleSubmit} className="container-fluid whiteBgCreateTrip">
+
         <div className="row">
-          <h1 className="col">Create Trip</h1>
+          <div className="col h1Profile">
+          <h1 className="h1Profile">Create Trip</h1>
+          </div>
         </div>
         <div className="row">
           <h3 className="col">Select Location</h3>
@@ -30,6 +34,7 @@ class CreateTrip extends Component {
         <div className="row">
           <div className="col">
             <label htmlFor="country">Country</label><br></br>
+
             <input type="text" id="country" placeholder="Country" className="width100" onChange={this.handleChange}/>
           </div>
           <div className="col">
@@ -43,6 +48,7 @@ class CreateTrip extends Component {
         <div className="row">
           <div className="col">
             <label htmlFor="title">Title</label><br></br>
+
             <input type="text" id="title" placeholder="Title" className="width100" onChange={this.handleChange}/>
           </div>
         </div>
@@ -56,9 +62,9 @@ class CreateTrip extends Component {
             <h3 className="col">Select Your To Do's</h3>
         </div>
         <div className="row">
-          <div className="col">
-            <button>Add To Do</button>
-            <input type="text" placeholder="Write a To Do" onChange={this.handleChange}/>
+          <div className="col ">
+            <button className="createToDoButton">+</button>
+            <input type="text" placeholder="Write a To Do" className="textStyle" onChange={this.handleChange}/>
           </div>
         </div>
         <div className="row">
@@ -67,7 +73,7 @@ class CreateTrip extends Component {
         <ActivitySelector />
         <div className="row">
           <div className="col">
-            <button className="width100" onClick={this.postTrip}>Let's Go!</button>
+            <button className="width100 submitButtons" onClick={this.postTrip}>Let's Go!</button>
           </div>
         </div>
       </form>
