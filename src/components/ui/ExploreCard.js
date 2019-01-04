@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 
-class TripCard extends Component {
+class ExploreCard extends Component {
   render() {
     return (
         <div className="card">
@@ -31,11 +31,11 @@ class TripCard extends Component {
             </div>
 
             <div className="col">
-                <span className="usernameItalic">Timmy73</span>
+                <span className="cardExploreViews">264 Views</span>
             </div>
 
             <div className="col">
-                <button className="buttons">Update</button>
+                <span className="usernameItalic">Timmy73</span>
             </div>
         </div>                 
     </div>
@@ -43,4 +43,4 @@ class TripCard extends Component {
   }
 }
 
-export default TripCard;
+export default ExploreCard;

@@ -63,6 +63,8 @@ border: 1px solid white;
 
 body{
   background-color: lightgray;
+  font-family: 'Roboto', sans-serif;
+  color: #113A52;
 }
 .profileImg{
   height:50px;
@@ -82,7 +84,7 @@ body{
   font-weight: bold;
 }
 .greenText{
-  color: lightseagreen;
+  color: #00C3B6;
 }
 .h1Profile{
   margin: 15px 0px;
@@ -92,7 +94,7 @@ body{
   font-size: 1.3em;
 }
 .profTripPin{
-  color: lightseagreen;
+  color: #00C3B6;
   font-size: 1.15em;
   text-align: center;
 }
@@ -141,16 +143,40 @@ body{
   padding-bottom: 20px;
 }
 .profTripPin{
-  border-bottom: 3px solid lightseagreen;
+  border-bottom: 3px solid #00C3B6;
 }
 .likeButton{
 border-radius: 50px/50px;
-border: solid 5px lightseagreen;
-background-color: lightseagreen;
+border: solid 5px #00C3B6;
+background-color: #00C3B6;
 box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 width: 50px;
 height: 50px;
 }
 .likeB{
 margin-left: 12px;
+}
+
+.h1Explore {
+  margin: 1% 0;
+  width: 100%;
+  font-size: 2em;
+  font-weight: Bold;
+}
+
+.h2Explore {
+  margin: 1% 0;
+  width: 100%;
+  font-size: 1.5em;
+  font-weight: 100;
+}
+
+.cardExploreViews {
+
+}
+
+.exploreSearch {
+  margin: 2% 0;
+  color: #113A52;
+  width: 100%;
 }
