@@ -6,7 +6,7 @@ class AlbumCard extends Component {
         <div className="card">
             <div className="row">
                 <div className="col">
-                    <img src="images/norway.jpg" className="cardImg" />
+                    <img src="images/norway.jpg" className="cardImg" alt=""/>
                 </div>
             </div>
 
@@ -16,7 +16,7 @@ class AlbumCard extends Component {
                     <p className="cardDescr">The hike was quite difficult but the new at the top made it all worth it. </p>
                 </div>
             </div>
-        </div>      
+        </div>
 
     );
   }

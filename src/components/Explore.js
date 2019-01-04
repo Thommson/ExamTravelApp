@@ -1,31 +1,16 @@
 import React, { Component } from 'react';
 import SearchField from 'react-search-field';
 import ActivitySelector from './ui/ActivitySelector';
-import ExploreCard from './ui/ExploreCard';
+import TripList from './ui/TripList';
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
 
 class Explore extends Component {
 
-  constructor(props){
-    super(props);
-
-    this.state = {
-      allTrips: [
-        {
-          id:"1",
-          tripCountry: "Canada"
-        },
-        {
-          id:"2",
-          tripCountry: "Germany"
-        },
-        {
-          id:"3",
-          tripCountry: "Sweden"
-        },
-      ],
-    }
-  }
   render() {
+    const { trips } = this.props;
+
     return (
       <div className="container-fluid">
         <div className="row grayBackground">
@@ -63,19 +48,22 @@ class Explore extends Component {
               <span className="profTripPin">Followed</span>
           </div>
         </div>
-        {
-          this.state.allTrips.map((trip) => {
-            return(
-              <ExploreCard tripCountry={trip.tripCountry} tripId={trip.id} key={trip.id} />
-            )
-
-          })
-
-        }
-
+        <TripList trips={trips} />
       </div>
     );
   }
 }
 
-export default Explore;
+const mapStateToProps = (state) => {
+  console.log(state);
+  return{
+    trips: state.firestore.ordered.trips
+  }
+}
+
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: 'trips' }
+  ])
+)(Explore)

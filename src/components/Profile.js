@@ -5,7 +5,7 @@ class Profile extends Component {
   render() {
     return (
       <div className="container-fluid">
-    
+
         <div className="row grayBackground">
             <div className="col">
                  <h1 className="h1Profile">Profile</h1>
@@ -14,7 +14,7 @@ class Profile extends Component {
 
         <div className="row grayBackground">
             <div className="col">
-                <img src="images/profilepic.png" className="profileImg" />
+                <img src="images/profilepic.png" className="profileImg" alt=""/>
             </div>
 
             <div className="col">
@@ -40,7 +40,7 @@ class Profile extends Component {
             </div>
 
             <div className="col">
-                <span className="profileCount">15</span>  
+                <span className="profileCount">15</span>
                 <br></br>
                 <span className="greenText">Trips Created</span>
             </div>
@@ -56,10 +56,10 @@ class Profile extends Component {
             </div>
 
         </div>
-         
+
          <TripCard />
-    
-   
+
+
     </div>
     );
   }

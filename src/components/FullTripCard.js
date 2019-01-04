@@ -1,31 +1,34 @@
-import React, { Component } from 'react';
+import React from 'react';
 import ToDoChecklist from './ui/ToDoChecklist';
 import AlbumCard from './ui/AlbumCard';
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux'
 
-class FullTripCard extends Component {
-  render() {
-    return (
+const FullTripCard = (props) => {
+  const { trip } = props;
+  if(trip){
+    return(
       <div className="container-fluid">
-
         <div className="row greenBG">
             <div className="col userCol">
-                <img src="images/profilepic.png" className="userImg" />
+                <img src="images/profilepic.png" className="userImg" alt=""/>
                 <span className="user">Timmy73</span>
             </div>
         </div>
 
         <div className="row greenBG">
             <div className="col">
-                <h1 className="h1FullTripCard">Bergen, Norway</h1>
+                <h1 className="h1FullTripCard">{trip.country}, {trip.city}</h1>
             </div>
         </div>
 
         <div className="row greenBG">
              <div className="col">
-                <img src="images/flag.png" className="flagImg flagFullCard" />
+                <img src="images/flag.png" className="flagImg flagFullCard" alt=""/>
             </div>
         </div>
-        
+
         <div className="row greenBG">
             <div className="col-m">
                 <span className="pinB">Lik</span>
@@ -33,7 +36,7 @@ class FullTripCard extends Component {
                 <span className="pinB">Pin</span>
                 <span className="likeAmount">20</span>
             </div>
-         </div> 
+         </div>
 
         <div className="row">
             <div className="col">
@@ -67,16 +70,40 @@ class FullTripCard extends Component {
         <div className="row">
             <div className="col">
                 <h3 className="fullCardTitle">Album</h3>
-    
+
             </div>
         </div>
-        
-        <AlbumCard />
-                   
-    </div>
 
-    );
+        <AlbumCard />
+
+    </div>
+    )
+} else {
+  return(
+    <div className="container-fluid">
+      <div className="row">
+        <div className="col">
+          <p>Loading...</p>
+        </div>
+      </div>
+    </div>
+  )
+
   }
 }
 
-export default FullTripCard;
+const mapStateToProps = (state, ownProps) => {
+  const id = ownProps.match.params.id;
+  const trips = state.firestore.data.trips;
+  const trip = trips ? trips[id] : null
+  return{
+    trip: trip
+  }
+}
+
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    {collection: 'trips'}
+  ])
+)(FullTripCard);

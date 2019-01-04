@@ -1,9 +1,26 @@
 import React, { Component } from 'react';
-import ActivitySelector from './ui/ActivitySelector'
+import ActivitySelector from './ui/ActivitySelector';
+import { connect } from 'react-redux'
+import { createTrip } from '../store/actions/tripActions';
+
 class CreateTrip extends Component {
+  state = {
+    country: '',
+    city: ''
+  }
+
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    })
+  }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.createTrip(this.state)
+  }
   render() {
     return (
-      <div className="container-fluid">
+      <form onSubmit={this.handleSubmit} className="container-fluid">
         <div className="row">
           <h1 className="col">Create Trip</h1>
         </div>
@@ -13,11 +30,11 @@ class CreateTrip extends Component {
         <div className="row">
           <div className="col">
             <label htmlFor="country">Country</label><br></br>
-            <input type="text" id="country" placeholder="Country" className="width100"/>
+            <input type="text" id="country" placeholder="Country" className="width100" onChange={this.handleChange}/>
           </div>
           <div className="col">
             <label htmlFor="city">City</label><br></br>
-            <input type="text" id="city" placeholder="City" className="width100"/>
+            <input type="text" id="city" placeholder="City" className="width100" onChange={this.handleChange}/>
           </div>
         </div>
         <div className="row">
@@ -26,13 +43,13 @@ class CreateTrip extends Component {
         <div className="row">
           <div className="col">
             <label htmlFor="title">Title</label><br></br>
-            <input type="text" id="title" placeholder="Title" className="width100"/>
+            <input type="text" id="title" placeholder="Title" className="width100" onChange={this.handleChange}/>
           </div>
         </div>
         <div className="row">
           <div className="col">
             <label htmlFor="description">Description</label><br></br>
-            <input type="text" id="description" placeholder="Description" className="width100"/>
+            <input type="text" id="description" placeholder="Description" className="width100" onChange={this.handleChange}/>
           </div>
         </div>
         <div className="row">
@@ -41,7 +58,7 @@ class CreateTrip extends Component {
         <div className="row">
           <div className="col">
             <button>Add To Do</button>
-            <input type="text" placeholder="Write a To Do"/>
+            <input type="text" placeholder="Write a To Do" onChange={this.handleChange}/>
           </div>
         </div>
         <div className="row">
@@ -50,12 +67,17 @@ class CreateTrip extends Component {
         <ActivitySelector />
         <div className="row">
           <div className="col">
-            <button className="width100">Let's Go!</button>
+            <button className="width100" onClick={this.postTrip}>Let's Go!</button>
           </div>
         </div>
-      </div>
+      </form>
     );
   }
 }
 
-export default CreateTrip;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createTrip: (trip) => dispatch(createTrip(trip))
+  }
+}
+export default connect(null, mapDispatchToProps)(CreateTrip);

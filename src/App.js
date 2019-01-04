@@ -14,17 +14,18 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-          <Navbar />
+
           <Switch>
-            <Route path='/FullTripCard' component={ FullTripCard } />
+            <Route path='/' component={ Explore } exact />
+            <Route path='/trip/:id' component={ FullTripCard } />
             <Route path='/Register' component={ Register } />
             <Route path='/Login' component={ Login } />
-            <Route path='/' component={ Explore } exact />
             <Route path='/Explore' component={ Explore } />
             <Route path='/Profile' component={ Profile } />
             <Route path='/CreateTrip' component={ CreateTrip } />
             <Route  component={ Error404 } />
           </Switch>
+          <Navbar />
         </div>
       </BrowserRouter>
     );
