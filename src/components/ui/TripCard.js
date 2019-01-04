@@ -7,7 +7,7 @@ class TripCard extends Component {
         <div className="card">
         <div className="row">
             <div className="col">
-                <img src="images/norway.jpg" className="cardImg" />
+                <img src="images/norway.jpg" className="cardImg" alt=""/>
             </div>
         </div>
 
@@ -16,9 +16,8 @@ class TripCard extends Component {
                 <span className="countryVisited">Bergen, Norway</span>
                 <p>Hiked a mountain and saw beautiful nature. </p>
             </div>
-
             <div className="col-2 flagImgPadding">
-                <img src="images/flag.png" className="flagImgTrip" />
+                <img src="images/flag.png" className="flagImgTrip" alt=""/>
             </div>
         </div>
 
@@ -37,7 +36,7 @@ class TripCard extends Component {
             <div className="col">
                 <button className="buttons">Update</button>
             </div>
-        </div>                 
+        </div>
     </div>
     );
   }
