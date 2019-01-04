@@ -29,8 +29,8 @@ class Explore extends Component {
     return (
       <div className="container-fluid">
         <div className="row grayBackground">
-            <div className="col">
-                 <h1 className="h1Explore">Explore</h1>
+            <div className="col h1Profile">
+                 <h1 className="h1Profile">Explore</h1>
             </div>
 
             <div className="col">

@@ -5,7 +5,7 @@ import AlbumCard from './ui/AlbumCard';
 class FullTripCard extends Component {
   render() {
     return (
-      <div className="container-fluid">
+      <div className="container-fluid whiteBG">
 
         <div className="row greenBG">
             <div className="col userCol">
@@ -21,8 +21,8 @@ class FullTripCard extends Component {
         </div>
 
         <div className="row greenBG">
-             <div className="col">
-                <img src="images/flag.png" className="flagImg flagFullCard" />
+             <div className="col flagPlacement">
+                <img src="images/flag.png" className="flagImgFullTrip" />
             </div>
         </div>
         

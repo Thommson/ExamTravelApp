@@ -7,7 +7,7 @@ class Profile extends Component {
       <div className="container-fluid">
     
         <div className="row grayBackground">
-            <div className="col">
+            <div className="col h1Profile">
                  <h1 className="h1Profile">Profile</h1>
             </div>
         </div>
