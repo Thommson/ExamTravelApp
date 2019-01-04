@@ -34,12 +34,11 @@ class CreateTrip extends Component {
         <div className="row">
           <div className="col">
             <label htmlFor="country">Country</label><br></br>
-
-            <input type="text" id="country" placeholder="Country" className="width100" onChange={this.handleChange}/>
+            <input type="text" id="country" placeholder="Country" className="width100 textStyle" onChange={this.handleChange}/>
           </div>
           <div className="col">
             <label htmlFor="city">City</label><br></br>
-            <input type="text" id="city" placeholder="City" className="width100" onChange={this.handleChange}/>
+            <input type="text" id="city" placeholder="City" className="width100 textStyle" onChange={this.handleChange}/>
           </div>
         </div>
         <div className="row">
@@ -49,13 +48,13 @@ class CreateTrip extends Component {
           <div className="col">
             <label htmlFor="title">Title</label><br></br>
 
-            <input type="text" id="title" placeholder="Title" className="width100" onChange={this.handleChange}/>
+            <input type="text" id="title" placeholder="Title" className="width100 textStyle" onChange={this.handleChange}/>
           </div>
         </div>
         <div className="row">
           <div className="col">
             <label htmlFor="description">Description</label><br></br>
-            <input type="text" id="description" placeholder="Description" className="width100" onChange={this.handleChange}/>
+            <input type="text" id="description" placeholder="Description" className="width100 textStyle" onChange={this.handleChange}/>
           </div>
         </div>
         <div className="row">
