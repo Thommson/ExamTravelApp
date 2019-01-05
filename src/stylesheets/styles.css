@@ -117,12 +117,11 @@ border: 1px solid lightgray;
 /* Profile page */
 
 body{
-  background-color: lightgray;
   font-family: 'Roboto', sans-serif;
   color: #113A52;
 }
 .grayBackground{
-  background-color: #fff;
+  background-color: lightgray;
   padding-bottom: 3%;
 }
 .profileImg{
@@ -314,7 +313,6 @@ margin-left: 12%;
 /* Create Trip */
 .whiteBgCreateTrip{
   background-color: #fff;
-  height: 100vh;
 }
 .textStyle{
   border: none;

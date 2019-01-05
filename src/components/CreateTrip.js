@@ -25,7 +25,7 @@ class CreateTrip extends Component {
     if(!auth.uid) return <Redirect to='/Login' />
     return (
 
-      <form onSubmit={this.handleSubmit} className="container-fluid whiteBgCreateTrip">
+      <form onSubmit={this.handleSubmit} className="container-fluid">
 
         <div className="row">
           <div className="col h1Profile">
