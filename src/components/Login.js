@@ -1,10 +1,29 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { signIn } from '../store/actions/authActions'
+import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 class Login extends Component {
+  state = {
+    email: '',
+    password: ''
+  }
+  handleChange = (e) => {
+    this.setState({
+      [e.target.id]: e.target.value
+    })
+  }
+  handleSubmit = (e) => {
+    e.preventDefault();
+    this.props.signIn(this.state)
+  }
   render() {
+      const { authError, auth } = this.props;
+      if(auth.uid) return <Redirect to='/Explore' />
     return (
 
-      <div className="container-fluid green-background">
+      <form onSubmit={this.handleSubmit} className="container-fluid green-background">
         <div className="row">
           <div className="col">
             <h1 className="login-title-placement">StudyLife</h1>
@@ -24,18 +43,23 @@ class Login extends Component {
             </div>
             <div className="row">
               <div className="col">
-                <label htmlFor="username">Username</label><br></br>
-                <input type="text" id="username" placeholder="Username" className="width100"/>
+                <label htmlFor="email">Email</label><br></br>
+                <input type="text" id="email" placeholder="Email" className="width100" onChange={this.handleChange}/>
               </div>
             </div>
             <div className="row">
               <div className="col">
                 <label htmlFor="password">Password</label><br></br>
-                <input type="text" id="password" placeholder="Password" className="width100"/>
+                <input type="text" id="password" placeholder="Password" className="width100" onChange={this.handleChange}/>
               </div>
             </div>
             <div className="row">
               <span className="col">Forgot password?</span>
+            </div>
+            <div className="row">
+              <p className="col">
+              { authError ? <p>{authError}</p> : null }
+              </p>
             </div>
             <div className="row">
               <div className="col">
@@ -44,14 +68,28 @@ class Login extends Component {
             </div>
             <div className="row">
               <div className="col">
-                <button className="width100">Register</button>
+                <Link to="/Register" className="width100">I don't have an account...</Link>
               </div>
             </div>
+
           </div>
         </div>
-      </div>
+      </form>
     );
   }
 }
 
-export default Login;
+const mapStateToProps = (state) => {
+  return {
+    authError: state.auth.authError,
+    auth: state.firebase.auth
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    signIn: (creds) => dispatch(signIn(creds))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);
