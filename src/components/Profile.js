@@ -11,13 +11,13 @@ class Profile extends Component {
     return (
       <div className="container-fluid">
 
-        <div className="row grayBackground">
+        <div className="row">
             <div className="col h1Profile">
                  <h1 className="h1Profile">Profile</h1>
             </div>
         </div>
 
-        <div className="row grayBackground">
+        <div className="row">
             <div className="col">
                 <img src="images/profilepic.png" className="profileImg" alt=""/>
             </div>
@@ -31,7 +31,7 @@ class Profile extends Component {
             </div>
         </div>
 
-        <div className="row grayBackground">
+        <div className="row">
             <div className="col">
                 <span className="profileCount">1.4K</span>
                 <br></br>
@@ -51,7 +51,7 @@ class Profile extends Component {
             </div>
         </div>
 
-        <div className="row grayBackground textCenter">
+        <div className="row textCenter">
             <div className="col">
                 <span className="profTripPin">Created Trips</span>
             </div>

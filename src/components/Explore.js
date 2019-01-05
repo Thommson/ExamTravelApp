@@ -15,7 +15,7 @@ class Explore extends Component {
 
     return (
       <div className="container-fluid">
-        <div className="row grayBackground">
+        <div className="row">
             <div className="col h1Profile">
                  <h1 className="h1Profile">Explore</h1>
             </div>
@@ -29,7 +29,7 @@ class Explore extends Component {
 
         </div>
 
-        <div className="row grayBackground">
+        <div className="row">
             <div className="col">
                  <h1 className="h2Explore">Activities</h1>
             </div>
@@ -37,7 +37,7 @@ class Explore extends Component {
 
         <ActivitySelector />
 
-        <div className="row grayBackground textCenter">
+        <div className="row textCenter">
           <div className="col">
               <span className="profTripPin">Trending</span>
           </div>

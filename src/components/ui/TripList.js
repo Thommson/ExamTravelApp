@@ -3,7 +3,7 @@ import ExploreCard from './ExploreCard';
 import { Link } from 'react-router-dom'
   const TripList = ({trips}) => {
     return (
-      <div className="row">
+      <div className="row grayBackground">
         <div className="col">
           { trips && trips.map(trip => {
             return(
