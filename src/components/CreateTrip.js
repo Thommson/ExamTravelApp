@@ -18,6 +18,7 @@ class CreateTrip extends Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.createTrip(this.state)
+    this.props.history.push('/Explore')
   }
   render() {
     const { auth } = this.props;
@@ -75,7 +76,7 @@ class CreateTrip extends Component {
         <ActivitySelector />
         <div className="row">
           <div className="col">
-            <button className="width100 submitButtons" onClick={this.postTrip}>Let's Go!</button>
+            <button type="submit" className="width100 submitButtons" onClick={this.postTrip}>Let's Go!</button>
           </div>
         </div>
       </form>

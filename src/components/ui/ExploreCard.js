@@ -33,7 +33,7 @@ const ExploreCard = ({trip}) => {
             </div>
 
             <div className="col">
-                <span className="usernameItalic">Timmy73</span>
+                <span className="usernameItalic">{trip.username}</span>
             </div>
         </div>
     </div>
