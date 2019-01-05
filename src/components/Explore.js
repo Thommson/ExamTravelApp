@@ -67,6 +67,6 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: 'trips' }
+    { collection: 'trips', orderBy: ['createdAt', 'desc'] }
   ])
 )(Explore)
