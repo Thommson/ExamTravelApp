@@ -5,11 +5,12 @@ import TripList from './ui/TripList';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-
+import { Redirect } from 'react-router-dom';
 class Explore extends Component {
 
   render() {
-    const { trips } = this.props;
+    const { trips, auth } = this.props;
+    if(!auth.uid) return <Redirect to='/Login' />
 
     return (
       <div className="container-fluid">
@@ -57,7 +58,8 @@ class Explore extends Component {
 const mapStateToProps = (state) => {
   console.log(state);
   return{
-    trips: state.firestore.ordered.trips
+    trips: state.firestore.ordered.trips,
+    auth: state.firebase.auth
   }
 }
 

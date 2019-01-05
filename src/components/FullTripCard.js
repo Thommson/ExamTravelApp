@@ -4,9 +4,12 @@ import AlbumCard from './ui/AlbumCard';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux'
+import { Redirect } from 'react-router-dom';
 
 const FullTripCard = (props) => {
-  const { trip } = props;
+  const { trip, auth  } = props;
+  if(!auth.uid) return <Redirect to='/Login' />
+
   if(trip){
     return(
       <div className="container-fluid whiteBG">
@@ -97,7 +100,8 @@ const mapStateToProps = (state, ownProps) => {
   const trips = state.firestore.data.trips;
   const trip = trips ? trips[id] : null
   return{
-    trip: trip
+    trip: trip,
+    auth: state.firebase.auth
   }
 }
 

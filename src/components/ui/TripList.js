@@ -7,8 +7,8 @@ import { Link } from 'react-router-dom'
         <div className="col">
           { trips && trips.map(trip => {
             return(
-              <Link to={'/trip/'+ trip.id}>
-                <ExploreCard trip={trip} key={trip.id} />
+              <Link to={'/Trip/'+ trip.id} key={trip.id}>
+                <ExploreCard trip={trip} />
               </Link>
             )
           })}
