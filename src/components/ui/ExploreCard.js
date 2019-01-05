@@ -31,10 +31,6 @@ class ExploreCard extends Component {
             </div>
 
             <div className="col">
-                <span className="cardExploreViews">264 Views</span>
-            </div>
-
-            <div className="col">
                 <span className="usernameItalic">Timmy73</span>
             </div>
         </div>                 
