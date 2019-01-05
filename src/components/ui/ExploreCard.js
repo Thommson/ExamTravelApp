@@ -8,32 +8,30 @@ const ExploreCard = ({trip}) => {
                 <img src="images/norway.jpg" className="cardImg" alt=""/>
             </div>
         </div>
+        <div className="row">
+          <div className="col card-margin">
+            <div className="row card-description-margin">
+                <div className="col-10">
+                    <span className="countryVisited">{trip.country}, {trip.city}</span>
+                    <p>Hiked a mountain and saw beautiful nature. </p>
+                </div>
 
-        <div className="row cardDescrip">
-            <div className="col-10">
-                <span className="countryVisited">{trip.country}, {trip.city}</span>
-                <p>Hiked a mountain and saw beautiful nature. </p>
+                <div className="col-2">
+                    <img src="images/flag.png" className="flagImgTrip" alt=""/>
+                </div>
             </div>
 
-            <div className="col-2 flagImgPadding">
-                <img src="images/flag.png" className="flagImgTrip" alt=""/>
-            </div>
-        </div>
-
-        <div className="row cardLikes">
-            <div className="col-m">
-                <span className="likeButton likeB">Lik</span>
-                <span>20</span>
-                <span className="likeButton">Pin</span>
-                <span>20</span>
-            </div>
-
-            <div className="col">
-                <span className="cardExploreViews">264 Views</span>
-            </div>
-
-            <div className="col">
-                <span className="usernameItalic">{trip.username}</span>
+            <div className="row cardLikes">
+                <div className="col-m">
+                    <span className="likeButton likeB">Lik</span>
+                    <span>20</span>
+                    <span className="likeButton">Pin</span>
+                    <span>20</span>
+                </div>
+                <div className="col text-align-right">
+                    <span className="usernameItalic">{trip.username}</span>
+                </div>
+              </div>
             </div>
         </div>
     </div>
