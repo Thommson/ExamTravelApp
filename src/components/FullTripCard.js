@@ -16,7 +16,7 @@ const FullTripCard = (props) => {
         <div className="row greenBG">
             <div className="col userCol">
                 <img src="images/profilepic.png" className="userImg" alt=""/>
-                <span className="user">Timmy73</span>
+                <span className="user">{trip.username}</span>
             </div>
         </div>
 

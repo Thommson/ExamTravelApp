@@ -1,10 +1,12 @@
 export const createTrip = (trip) => {
   return (dispatch, getState, { getFirebase, getFirestore }) => {
     const firestore = getFirestore();
+    const profile = getState().firebase.profile;
+    const authorId = getState().firebase.auth.uid;
     firestore.collection('trips').add({
       ...trip,
-      userID: 1,
-      userName: 'Thommson',
+      authorId: authorId,
+      username: profile.username,
       createdAt: new Date()
     }).then(() => {
       dispatch({ type: 'CREATE_TRIP', trip});
