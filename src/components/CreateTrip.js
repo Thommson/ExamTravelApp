@@ -7,7 +7,9 @@ import { Redirect } from 'react-router-dom';
 class CreateTrip extends Component {
   state = {
     country: '',
-    city: ''
+    city: '',
+    title: '',
+    description: ''
   }
 
   handleChange = (e) => {
@@ -66,7 +68,7 @@ class CreateTrip extends Component {
         </div>
         <div className="row">
           <div className="col ">
-            <button className="createToDoButton">+</button>
+            <input type="checkbox" className="createToDoButton" />
             <input type="text" placeholder="Write a To Do" className="textStyle" onChange={this.handleChange}/>
           </div>
         </div>

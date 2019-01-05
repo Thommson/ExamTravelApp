@@ -13,7 +13,7 @@ const ExploreCard = ({trip}) => {
             <div className="row card-description-margin">
                 <div className="col-10">
                     <span className="countryVisited">{trip.country}, {trip.city}</span>
-                    <p>Hiked a mountain and saw beautiful nature. </p>
+                    <p>{trip.description}</p>
                 </div>
 
                 <div className="col-2">
