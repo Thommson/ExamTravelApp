@@ -43,11 +43,8 @@ const FullTripCard = (props) => {
 
         <div className="row">
             <div className="col">
-                <h3 className="fullCardTitle">10 hour hike</h3>
-                <p className="fullCardDescr">
-                    The hike was challenging but it was very rewarding.
-                    Thew view at the top was very beautiful.
-                </p>
+                <h3 className="fullCardTitle">{trip.title}</h3>
+                <p className="fullCardDescr">{trip.description}</p>
             </div>
         </div>
 

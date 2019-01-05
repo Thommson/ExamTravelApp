@@ -1,9 +1,5 @@
 const initState = {
-  trips: [
-    {id: 1, country: 'Canada', city: 'Ottawa'},
-    {id: 2, country: 'Germany', city: 'Berlin'},
-    {id: 3, country: 'France', city: 'Paris'}
-  ]
+  trips: []
 }
 
 const tripReducer = (state = initState, action) => {
@@ -17,7 +13,7 @@ const tripReducer = (state = initState, action) => {
     default:
       return state;
   }
-  return state
+  return state;
 }
 
 export default tripReducer
