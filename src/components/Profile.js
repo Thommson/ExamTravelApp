@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
 import TripCard from './ui/TripCard';
+import { connect } from 'react-redux';
+import { Redirect } from 'react-router-dom';
 
 class Profile extends Component {
   render() {
+    const { auth, profile } = this.props;
+    console.log(this.props)
+    if(!auth.uid) return <Redirect to='/Login' />
     return (
       <div className="container-fluid">
 
@@ -18,7 +23,7 @@ class Profile extends Component {
             </div>
 
             <div className="col">
-                <span className="username">Timmy73</span>
+                <span className="username">{profile.username}</span>
             </div>
 
             <div className="col">
@@ -65,4 +70,11 @@ class Profile extends Component {
   }
 }
 
-export default Profile;
+const mapStateToProps = (state) => {
+  return{
+    auth: state.firebase.auth,
+    profile: state.firebase.profile
+  }
+}
+
+export default connect(mapStateToProps)(Profile);
