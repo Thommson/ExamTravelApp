@@ -5,9 +5,11 @@ import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux'
 import { Redirect } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const FullTripCard = (props) => {
-  const { trip, auth  } = props;
+  const { trip, auth } = props;
+
   if(!auth.uid) return <Redirect to='/Login' />
 
   if(trip){
@@ -16,7 +18,7 @@ const FullTripCard = (props) => {
         <div className="row greenBG">
             <div className="col userCol">
                 <img src="images/profilepic.png" className="userImg" alt=""/>
-                <span className="user">{trip.username}</span>
+                <Link to={'/Profiles/' + trip.authorId} className="user">{trip.username}</Link>
             </div>
         </div>
 

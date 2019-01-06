@@ -20,7 +20,6 @@ class TripCard extends Component {
             <span className="countryVisited">Bergen, Norway</span>
             <p>Hiked a mountain and thew view was amazng.</p>
         </div>
-
         <div className="col-2">
             <img src="images/flag.png" className="flagImgTrip" alt=""/>
         </div>
@@ -42,22 +41,17 @@ class TripCard extends Component {
       
         <label className="containerLabelLike">
         <input type="checkbox" />
-        
+ 
             <svg id='Layer_1' class="likePinSvg" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'>
                 <path className='st0' d='M150.1,232.7l-67.2,67.9c-3.4,3.3-5.5,7.9-5.5,13c0,10,8.1,18.2,18,18.2h127.4v113.6	c0,12.5,10.2,22.7,22.7,22.7c12.5,0,22.7-10.2,22.7-22.7V331.8h136.5c9.9,0,18-8.2,18-18.2c0-5-2-9.5-5.3-12.8l-67.4-68.1V77.4h13.6	c12.5,0,22.7-10.2,22.7-22.7s-10.2-22.7-22.7-22.7H136.4c-12.5,0-22.7,10.2-22.7,22.7c0,12.5,10.2,22.7,22.7,22.7h13.6V232.7z M231.8,95.5v118.1c0,10-8.2,18.2-18.2,18.2c-10,0-18.2-8.2-18.2-18.2V95.5c0-10,8.2-18.2,18.2-18.2	C223.7,77.4,231.8,85.6,231.8,95.5z'
                 />  
             </svg>
-            
             <span className="pinLikeCount">20</span>
-       
         </label>
-        
     </div>
-
         <div className="col-xs text-align-right">
             <span className="usernameItalic">timmy73</span>
         </div>
-
        <div className="col-5">
         <button className="buttons buttonCard">
             <div class="update">Update</div>
@@ -67,11 +61,8 @@ class TripCard extends Component {
             </svg>
         
         </button>
-
-        </div> 
-      
+       </div> 
     </div>
-
 </div>
 </div>
 </div>

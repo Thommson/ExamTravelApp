@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Explore from './components/Explore';
+import Profiles from './components/Profiles';
 import Profile from './components/Profile';
 import CreateTrip from './components/CreateTrip';
 import Error404 from './components/Error404';
@@ -14,7 +15,6 @@ class App extends Component {
     return (
       <BrowserRouter>
         <div>
-
           <Switch>
             <Route path='/' component={ Explore } exact />
             <Route path='/trip/:id' component={ FullTripCard } />
@@ -23,6 +23,7 @@ class App extends Component {
             <Route path='/Explore' component={ Explore } />
             <Route path='/Profile' component={ Profile } />
             <Route path='/CreateTrip' component={ CreateTrip } />
+            <Route path='/Profiles/:id' component={ Profiles } />
             <Route  component={ Error404 } />
           </Switch>
           <Navbar />
