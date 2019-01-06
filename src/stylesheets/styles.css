@@ -161,8 +161,7 @@ border: 1px solid lightgray;
 .card{
   box-shadow: 0px 4px 8px 2px rgba(0,0,0,0.2);
   border-radius: 12px;
-  margin: 5% 0px;
-  margin-bottom: 10%;
+  margin: 3% 0 17% 0;
   background-color: #fff;
 }
 .col-10{
@@ -214,15 +213,86 @@ border: 1px solid lightgray;
   text-align: center;
   padding-bottom: 6%;
 }
+.buttonCard{
+  float: right;
+}
 /* pin and like */
-
+.containerLabelLike{
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.containerLabelLike input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
 .likePinSvg{
+  fill: #113a52;;
+  background-color: lightgray;
   width: 7vw;
-  fill: #fff;
-  background-color: lightseagreen;
   padding: 5px;
   border-radius: 50px/50px;
-  margin: 0;
+  margin-right: 2px;
+}
+.containerLabelLike input:checked ~ .likePinSvg {
+  background-color: lightseagreen;
+  fill: #fff;
+  width: 7vw;
+  padding: 5px;
+  border-radius: 50px/50px;
+  margin-right: 2px;
+}
+.pinAmount{
+  padding-right: 6px;
+}
+
+/* Activities filter */
+.containerLabel {
+  display: block;
+  position: relative;
+  width: calc(100% / 5);
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.2em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.containerLabel input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.iconChecked{
+  fill: #113a52;;
+  background-color: lightgray;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  width: 11.5vw;
+}
+.containerLabel input:checked ~ .iconChecked {
+  background-color: lightseagreen;
+  fill: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+.checkboxFontStyle{
+  font-size: 0.7em;
+  font-weight: bold;
 }
 /* FullTripCard */
 .greenBG{
