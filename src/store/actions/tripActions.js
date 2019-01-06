@@ -7,7 +7,9 @@ export const createTrip = (trip) => {
       ...trip,
       authorId: authorId,
       username: profile.username,
-      createdAt: new Date()
+      createdAt: new Date(),
+      likes: 5,
+      pins: 0
     }).then(() => {
       dispatch({ type: 'CREATE_TRIP', trip});
     }).catch((err) => {

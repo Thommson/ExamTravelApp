@@ -7,11 +7,10 @@ import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
 
-
-class Explore extends Component {
-  handleTrendingLink = (e) => {
+class ExploreTrending extends Component {
+  handleRecentLink = (e) => {
     e.preventDefault();
-    this.props.history.push('/ExploreTrending');
+    this.props.history.push('/Explore');
     window.location.reload();
   };
   render() {
@@ -44,11 +43,11 @@ class Explore extends Component {
 
         <div className="row textCenter">
           <div className="col">
-              <a onClick={this.handleTrendingLink} className="profTripPin">Trending</a>
+              <span className="profTripPin">Trending</span>
           </div>
 
           <div className="col">
-              <span className="profTripPin">Recent</span>
+              <a onClick={this.handleRecentLink} className="profTripPin">Recent</a>
           </div>
 
           <div className="col">
@@ -72,6 +71,6 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect([
-    { collection: 'trips', orderBy: ['createdAt', 'desc'] }
+    { collection: 'trips', orderBy: ['likes', 'desc'] }
   ])
-)(Explore)
+)(ExploreTrending)
