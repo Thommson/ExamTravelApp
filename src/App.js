@@ -9,7 +9,7 @@ import Navbar from './components/ui/Navbar'
 import Login from './components/Login';
 import Register from './components/Register';
 import FullTripCard from './components/FullTripCard';
-
+import ExploreTrending from './components/ExploreTrending';
 class App extends Component {
   render() {
     return (
@@ -21,6 +21,7 @@ class App extends Component {
             <Route path='/Register' component={ Register } />
             <Route path='/Login' component={ Login } />
             <Route path='/Explore' component={ Explore } />
+            <Route path='/ExploreTrending' component={ ExploreTrending } />
             <Route path='/Profile' component={ Profile } />
             <Route path='/CreateTrip' component={ CreateTrip } />
             <Route path='/Profiles/:id' component={ Profiles } />

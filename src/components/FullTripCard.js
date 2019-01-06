@@ -37,9 +37,9 @@ const FullTripCard = (props) => {
         <div className="row greenBG">
             <div className="col-m">
                 <span className="pinB">Lik</span>
-                <span className="likeAmount">20</span>
+                <span className="likeAmount">{trip.likes}</span>
                 <span className="pinB">Pin</span>
-                <span className="likeAmount">20</span>
+                <span className="likeAmount">{trip.pins}</span>
             </div>
          </div>
 

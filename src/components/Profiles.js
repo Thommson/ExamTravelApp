@@ -28,7 +28,7 @@ const Profiles = (props) => {
               </div>
 
               <div className="col">
-                  <button className="buttons">Edit Profile</button>
+                  <button className="buttons">Follow</button>
               </div>
           </div>
 
