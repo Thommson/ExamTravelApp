@@ -1,13 +1,16 @@
 import React from 'react';
-import TripCard from './ui/TripCard';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
+import TripList from './ui/TripList';
 
 const Profiles = (props) => {
+    const id = props.match.params.id
+    const { auth, user, trips } = props;
 
-    const { auth, user } = props;
+
+    if(!auth.uid) return <Redirect to='/Login' />
     if(user){
       return (
         <div className="container-fluid">
@@ -24,7 +27,7 @@ const Profiles = (props) => {
               </div>
 
               <div className="col">
-                  <span className="username">{user.username}</span>
+                  <span className="username">{user.username} AuthorID:{id}</span>
               </div>
 
               <div className="col">
@@ -61,7 +64,9 @@ const Profiles = (props) => {
                   <span className="profTripPin">Pinned Trips</span>
               </div>
           </div>
-           <TripCard />
+
+            <TripList trips={trips} />
+
       </div>
       )
     } else {
@@ -69,17 +74,18 @@ const Profiles = (props) => {
           <div>Loading...</div>
       )
     }
-    if(!auth.uid) return <Redirect to='/Login' />
+
 
   }
 
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state)
+
   const id = ownProps.match.params.id;
   const users = state.firestore.data.users;
   const user = users ? users[id] : null
   return{
+    trips: state.firestore.ordered.trips,
     user: user,
     auth: state.firebase.auth
   }
@@ -87,7 +93,10 @@ const mapStateToProps = (state, ownProps) => {
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([
+
+  firestoreConnect(props => [
+
+    {collection: 'trips', where: [['authorId', '==', props.match.params.id]] },
     {collection: 'users'}
   ])
 )(Profiles);
