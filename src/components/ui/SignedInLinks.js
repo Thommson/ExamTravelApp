@@ -26,7 +26,7 @@ const SignedInLinks = (props) => {
         />
       </svg>
       </NavLink>
-        <a onClick={props.signOut} className="navbar-item">Log Out</a>
+        <div onClick={props.signOut} className="navbar-item">Log Out</div>
       </div>
     );
 }
