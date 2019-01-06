@@ -23,7 +23,7 @@ const FullTripCard = (props) => {
                     />
                 </svg>
             </Link>
-                
+
                 <img src="images/profilepic.png" className="userImg" alt=""/>
                 <Link to={'/Profiles/' + trip.authorId} className="user">{trip.username}</Link>
             </div>
@@ -96,8 +96,7 @@ const FullTripCard = (props) => {
         </div>
       </div>
     </div>
-  )
-
+    )
   }
 }
 

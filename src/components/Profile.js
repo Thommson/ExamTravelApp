@@ -1,11 +1,13 @@
 import React, { Component } from 'react';
-import TripCard from './ui/TripCard';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import TripList from './ui/TripList';
+import { compose } from 'redux';
+import { firestoreConnect } from 'react-redux-firebase';
 
 class Profile extends Component {
   render() {
-    const { auth, profile } = this.props;
+    const { trips, auth, profile } = this.props;
     console.log(this.props)
     if(!auth.uid) return <Redirect to='/Login' />
     return (
@@ -61,10 +63,7 @@ class Profile extends Component {
             </div>
 
         </div>
-
-         <TripCard />
-
-
+         <TripList trips={trips}/>
     </div>
     );
   }
@@ -72,9 +71,15 @@ class Profile extends Component {
 
 const mapStateToProps = (state) => {
   return{
+    trips: state.firestore.ordered.trips,
     auth: state.firebase.auth,
     profile: state.firebase.profile
   }
 }
 
-export default connect(mapStateToProps)(Profile);
+export default compose(
+  connect(mapStateToProps),
+  firestoreConnect([
+    { collection: 'trips', orderBy: ['createdAt', 'desc'] }
+  ])
+)(Profile)
