@@ -17,6 +17,13 @@ const FullTripCard = (props) => {
       <div className="container-fluid whiteBG">
         <div className="row greenBG">
             <div className="col userCol">
+            <Link to={'/Explore/'}>
+            <svg id='Layer_1' className="arrowSVG" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+                    <path d='M14.9,6.7c-0.4-0.4-1-0.4-1.4,0l-4.6,4.6c-0.4,0.4-0.4,1,0,1.4l4.6,4.6c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4L11,12	l3.9-3.9C15.3,7.7,15.3,7.1,14.9,6.7z'
+                    />
+                </svg>
+            </Link>
+                
                 <img src="images/profilepic.png" className="userImg" alt=""/>
                 <Link to={'/Profiles/' + trip.authorId} className="user">{trip.username}</Link>
             </div>

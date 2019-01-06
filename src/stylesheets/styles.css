@@ -37,9 +37,14 @@ border: 1px solid lightgray;
   height: 16px;
   margin-left: 8px;
   float: right;
+  cursor: pointer;
 }
 .update{
   float: left;
+}
+.logoutSVG{
+  height: 40px;
+  padding: 6px 0 2px 0;
 }
 
 /* Activities filter */
@@ -301,6 +306,12 @@ border: 1px solid lightgray;
 .whiteBG{
   background-color: #fff;
   height: 100%;
+}
+.arrowSVG{
+fill: #fff;
+width: 40px;
+height: 40px;
+float: left;
 }
 .h1FullTripCard{
   color: #fff;
