@@ -1,15 +1,17 @@
 import React from 'react';
 import ExploreCard from './ExploreCard';
-import { Link } from 'react-router-dom'
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
+
   const TripList = ({trips}) => {
+
     return (
       <div className="row grayBackground trip-list-padding">
         <div className="col">
           { trips && trips.map(trip => {
             return(
-              <Link to={'/Trip/'+ trip.id} key={trip.id}>
                 <ExploreCard trip={trip} />
-              </Link>
             )
           })}
 
@@ -18,4 +20,15 @@ import { Link } from 'react-router-dom'
     );
   }
 
-export default TripList;
+  const mapStateToProps = (state) => {
+    return{
+      trips: state.firestore.ordered.trips
+    }
+  }
+
+  export default compose(
+    connect(mapStateToProps),
+    firestoreConnect(props => [
+      { collection: 'trips', where: [['activityType', '==', props.activityType]] }
+    ])
+  )(TripList)
