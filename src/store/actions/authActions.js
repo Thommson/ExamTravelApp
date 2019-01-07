@@ -33,7 +33,8 @@ export const signUp = (newUser) => {
       newUser.password
     ).then((resp) => {
       return firestore.collection('users').doc(resp.user.uid).set({
-        username: newUser.username
+        username: newUser.username,
+        userId: resp.user.uid
       })
     }).then(() => {
       dispatch({ type: 'SIGNUP_SUCCESS' })

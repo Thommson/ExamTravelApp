@@ -10,7 +10,8 @@ class CreateTrip extends Component {
     title: '',
     description: '',
     activityType: '',
-    likedBy:[]
+    likedBy:[],
+    pinnedBy:[]
   }
 
   handleChange = (e) => {
