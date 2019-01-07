@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-import TripList from './ui/TripList';
+import TripListProfiles from './ui/TripListProfiles';
 
 const Profiles = (props) => {
     const id = props.match.params.id
@@ -27,7 +27,7 @@ const Profiles = (props) => {
               </div>
 
               <div className="col">
-                  <span className="username">{user.username} AuthorID:{id}</span>
+                  <span className="username">{user.username}</span>
               </div>
 
               <div className="col">
@@ -65,7 +65,7 @@ const Profiles = (props) => {
               </div>
           </div>
 
-            <TripList trips={trips} />
+            <TripListProfiles trips={trips} />
 
       </div>
       )

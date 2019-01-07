@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
-import TripList from './ui/TripList';
+import TripListProfiles from './ui/TripListProfiles';
 import { compose } from 'redux';
 import { firestoreConnect } from 'react-redux-firebase';
 
@@ -63,7 +63,7 @@ class Profile extends Component {
             </div>
 
         </div>
-         <TripList trips={trips}/>
+         <TripListProfiles trips={trips}/>
     </div>
     );
   }

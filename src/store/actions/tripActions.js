@@ -8,7 +8,7 @@ export const createTrip = (trip) => {
       authorId: authorId,
       username: profile.username,
       createdAt: new Date(),
-      likes: 5,
+      likes: 0,
       pins: 0
     }).then(() => {
       dispatch({ type: 'CREATE_TRIP', trip});
