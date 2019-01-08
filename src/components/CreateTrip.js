@@ -13,7 +13,9 @@ class CreateTrip extends Component {
     activityType: '',
     likedBy:[],
     pinnedBy:[],
-    todo:''
+    todo1: '',
+    todo2: '',
+    todo3: ''
   }
 
   handleChange = (e) => {
@@ -31,11 +33,19 @@ class CreateTrip extends Component {
     this.props.createTrip(this.state)
     this.props.history.push('/Explore')
   }
-  handleTodo = (e) => {
-      firebase.firestore().collection('trips').doc(this.props.trip.id).update({
-        todo: firebase.firestore.FieldValue.arrayUnion(this.props.todo)
-      })
+  addTodo2 = (e) => {
+    document.getElementById('todoRow2').style.display = 'block';
   }
+  addTodo3 = (e) => {
+    document.getElementById('todoRow3').style.display = 'block';
+  }
+  addTodo4 = (e) => {
+    document.getElementById('todoRow4').style.display = 'block';
+  }
+  addTodo5 = (e) => {
+    document.getElementById('todoRow5').style.display = 'block';
+  }
+
   render() {
     const { auth } = this.props;
     if(!auth.uid) return <Redirect to='/Login' />
@@ -87,10 +97,34 @@ class CreateTrip extends Component {
                 <p>TOdo's go here</p>
               </div>
             </div>
-            <div className="row">
+            <div  id="todoRow1" className="row">
+              <div className="col ">
+                <button onClick={this.addTodo2} type="button" className="createToDoButton" onCLick={this.handleTodo}>+</button>
+                <input type="text" id="todo1" placeholder="Write a To Do" className="textStyle" onChange={this.handleChange}/>
+              </div>
+            </div>
+            <div id="todoRow2" className="row">
+              <div className="col ">
+                <button onClick={this.addTodo3} type="button" className="createToDoButton" onCLick={this.handleTodo}>+</button>
+                <input type="text" id="todo2" placeholder="Write a To Do" className="textStyle" onChange={this.handleChange}/>
+              </div>
+            </div>
+            <div  id="todoRow3" className="row">
+              <div className="col ">
+                <button onClick={this.addTodo4} type="button" className="createToDoButton" onCLick={this.handleTodo}>+</button>
+                <input type="text" id="todo3" placeholder="Write a To Do" className="textStyle" onChange={this.handleChange}/>
+              </div>
+            </div>
+            <div id="todoRow4" className="row">
+              <div className="col ">
+                <button onClick={this.addTodo5} type="button" className="createToDoButton" onCLick={this.handleTodo}>+</button>
+                <input type="text" id="todo3" placeholder="Write a To Do" className="textStyle" onChange={this.handleChange}/>
+              </div>
+            </div>
+            <div id="todoRow5" className="row">
               <div className="col ">
                 <button type="button" className="createToDoButton" onCLick={this.handleTodo}>+</button>
-                <input type="text" id="todo" placeholder="Write a To Do" className="textStyle" onChange={this.handleChange}/>
+                <input type="text" id="todo3" placeholder="Write a To Do" className="textStyle" onChange={this.handleChange}/>
               </div>
             </div>
           </div>

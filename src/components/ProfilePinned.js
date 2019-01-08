@@ -7,7 +7,7 @@ import { Redirect } from 'react-router-dom';
 import TripListProfiles from './ui/TripListProfiles'
 
 class Profile extends Component {
-  handlePinnedLink = (e) => {
+  handleProfileLink = (e) => {
     e.preventDefault();
     this.props.history.push('/ProfilePinned');
     window.location.reload();
@@ -62,11 +62,11 @@ class Profile extends Component {
 
         <div className="row textCenter">
             <div className="col">
-                <span className="profTripPin">Created Trips</span>
+                <span className="profTripPin" onClick={this.handleProfileLink}>Created Trips</span>
             </div>
 
             <div className="col">
-                <span className="profTripPin" onClick={this.handlePinnedLink}>Pinned Trips</span>
+                <span className="profTripPin">Pinned Trips</span>
             </div>
 
         </div>
@@ -92,6 +92,6 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect(props => [
-    { collection: 'trips', where: [['authorId', '==', props.auth.uid]] }
+    { collection: 'trips', where: [['pinnedBy', 'array-contains', props.auth.uid]] }
   ])
 )(Profile)

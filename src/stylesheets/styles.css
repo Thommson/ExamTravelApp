@@ -6,6 +6,18 @@ body{
   font-family: 'Roboto', sans-serif;
   color: #113A52;
 }
+#todoRow2{
+  display: none;
+}
+#todoRow3{
+  display: none;
+}
+#todoRow4{
+  display: none;
+}
+#todoRow5{
+  display: none;
+}
 /* Navbar */
 .navbar{
   position: fixed;

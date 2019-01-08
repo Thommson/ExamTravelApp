@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import SearchField from 'react-search-field';
+
 import TripList from './ui/TripList';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
-
 
 class Explore extends Component {
   state = {
@@ -34,10 +33,7 @@ class Explore extends Component {
             </div>
 
             <div className="col">
-            <SearchField
-              placeholder='Search country, city'
-              classNames="exploreSearch"
-            />
+  
             </div>
 
         </div>
@@ -97,15 +93,10 @@ class Explore extends Component {
 
         <div className="row textCenter">
           <div className="col">
-              <a onClick={this.handleTrendingLink} className="profTripPin">Trending</a>
+              <span onClick={this.handleTrendingLink} className="profTripPin">Trending</span>
           </div>
-
           <div className="col">
               <span className="profTripPin">Recent</span>
-          </div>
-
-          <div className="col">
-              <span className="profTripPin">Followed</span>
           </div>
         </div>
         <TripList trips={trips} activityType={this.state.activityType}/>
@@ -115,7 +106,7 @@ class Explore extends Component {
 }
 
 const mapStateToProps = (state) => {
-
+  console.log(state)
   return{
     trips: state.firestore.ordered.trips,
     auth: state.firebase.auth
@@ -124,8 +115,7 @@ const mapStateToProps = (state) => {
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([
-    { collection: 'trips', orderBy: ['createdAt', 'desc']},
-    { collection: 'likedBy'}
+  firestoreConnect(props =>[
+    { collection: 'trips'}
   ])
 )(Explore)
