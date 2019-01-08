@@ -29,7 +29,7 @@ class Profile extends Component {
             </div>
 
             <div className="col">
-                <button className="buttons">Edit Profile</button>
+                
             </div>
         </div>
 
