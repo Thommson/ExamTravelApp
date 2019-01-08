@@ -8,7 +8,6 @@ import firebase from 'firebase/app';
 
 class Profiles extends Component {
   checkFollows = (e) => {
-
       for(let f = 0; f <= this.props.user.followedBy.length; f++){
 
         if(this.props.user.followedBy[f] === this.props.auth.uid){
@@ -63,19 +62,13 @@ class Profiles extends Component {
 
             <div className="row">
                 <div className="col">
-                    <span className="profileCount">1.4K</span>
+                    <span className="profileCount">{user.followedBy.length}</span>
                     <br></br>
                     <span className="greenText">Followers</span>
                 </div>
 
                 <div className="col">
-                    <span className="profileCount">138</span>
-                    <br></br>
-                    <span className="greenText">Following</span>
-                </div>
-
-                <div className="col">
-                    <span className="profileCount">15</span>
+                    <span className="profileCount">{trips.length}</span>
                     <br></br>
                     <span className="greenText">Trips Created</span>
                 </div>
@@ -84,10 +77,6 @@ class Profiles extends Component {
             <div className="row textCenter">
                 <div className="col">
                     <span className="profTripPin">Created Trips</span>
-                </div>
-
-                <div className="col">
-                    <span className="profTripPin">Pinned Trips</span>
                 </div>
             </div>
 

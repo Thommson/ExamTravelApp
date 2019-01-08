@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import SearchField from 'react-search-field';
-import TripList from './ui/TripList';
+
+import TripListTrending from './ui/TripListTrending';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
@@ -15,6 +15,11 @@ class ExploreTrending extends Component {
     this.props.history.push('/Explore');
     window.location.reload();
   };
+  handleFollowedLink = (e) => {
+    e.preventDefault();
+    this.props.history.push('/ExploreFollowed');
+    window.location.reload();
+  }
   handleRadio = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -32,10 +37,6 @@ class ExploreTrending extends Component {
             </div>
 
             <div className="col">
-            <SearchField
-              placeholder='Search country, city'
-              classNames="exploreSearch"
-            />
             </div>
 
         </div>
@@ -97,16 +98,11 @@ class ExploreTrending extends Component {
           <div className="col">
               <span className="profTripPin">Trending</span>
           </div>
-
           <div className="col">
-              <a onClick={this.handleRecentLink} className="profTripPin">Recent</a>
-          </div>
-
-          <div className="col">
-              <span className="profTripPin">Followed</span>
+              <span onClick={this.handleRecentLink} className="profTripPin">Recent</span>
           </div>
         </div>
-        <TripList trips={trips} activityType={this.state.activityType}/>
+        <TripListTrending trips={trips} activityType={this.state.activityType}/>
       </div>
     );
   }
@@ -122,7 +118,7 @@ const mapStateToProps = (state) => {
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect([
-    { collection: 'trips', orderBy: ['likes', 'desc'] }
+  firestoreConnect( [
+    { collection: 'trips', orderBy: ['likes', 'desc']}
   ])
 )(ExploreTrending)

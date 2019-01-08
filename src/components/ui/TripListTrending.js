@@ -3,7 +3,8 @@ import ExploreCard from './ExploreCard';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-  const TripListProfiles = ({trips}) => {
+
+  const TripListTrending = ({trips, activityType}) => {
 
     return (
       <div className="row grayBackground trip-list-padding">
@@ -28,6 +29,7 @@ import { compose } from 'redux';
   export default compose(
     connect(mapStateToProps),
     firestoreConnect(props => [
-    
+      
+
     ])
-  )(TripListProfiles)
+  )(TripListTrending)

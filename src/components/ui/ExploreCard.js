@@ -68,9 +68,9 @@ class ExploreCard extends Component {
   render(){
     const { trip, auth } = this.props;
     return (
-      <div onLoad={this.checkLikes}  className="card">
+      <div onLoad={this.checkLikes} onPointerMove={this.checkLikes} className="card">
       <Link to={'/Trip/'+ trip.id} key={trip.id}>
-        <div onLoad={this.checkPins} className="row">
+        <div onLoad={this.checkPins} onPointerMove={this.checkPins} className="row">
             <div className="col">
                 <img src="images/norway.jpg" className="cardImg" alt=""/>
             </div>
