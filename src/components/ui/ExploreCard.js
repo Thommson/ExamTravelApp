@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import firebase from 'firebase/app';
-
-
 import { connect } from 'react-redux';
 
 class ExploreCard extends Component {
@@ -69,7 +67,6 @@ class ExploreCard extends Component {
   }
   render(){
     const { trip, auth } = this.props;
-    console.log(this.props.trip.createdAt.nanoseconds);
     return (
       <div onLoad={this.checkLikes}  className="card">
       <Link to={'/Trip/'+ trip.id} key={trip.id}>
@@ -128,7 +125,6 @@ class ExploreCard extends Component {
 
 }
 const mapStateToProps = (state) => {
-  console.log(state)
   return {
     auth: state.firebase.auth
   }

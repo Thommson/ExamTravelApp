@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { createTrip } from '../store/actions/tripActions';
 import { Redirect } from 'react-router-dom';
+import firebase from 'firebase/app';
 
 class CreateTrip extends Component {
   state = {
@@ -11,7 +12,8 @@ class CreateTrip extends Component {
     description: '',
     activityType: '',
     likedBy:[],
-    pinnedBy:[]
+    pinnedBy:[],
+    todo:''
   }
 
   handleChange = (e) => {
@@ -28,6 +30,11 @@ class CreateTrip extends Component {
     e.preventDefault();
     this.props.createTrip(this.state)
     this.props.history.push('/Explore')
+  }
+  handleTodo = (e) => {
+      firebase.firestore().collection('trips').doc(this.props.trip.id).update({
+        todo: firebase.firestore.FieldValue.arrayUnion(this.props.todo)
+      })
   }
   render() {
     const { auth } = this.props;
@@ -74,15 +81,26 @@ class CreateTrip extends Component {
             <h3 className="col">Select Your To Do's</h3>
         </div>
         <div className="row">
-          <div className="col ">
-            <input type="checkbox" className="createToDoButton" />
-            <input type="text" placeholder="Write a To Do" className="textStyle" onChange={this.handleChange}/>
+          <div className="col">
+            <div className="row">
+              <div className="col">
+                <p>TOdo's go here</p>
+              </div>
+            </div>
+            <div className="row">
+              <div className="col ">
+                <button type="button" className="createToDoButton" onCLick={this.handleTodo}>+</button>
+                <input type="text" id="todo" placeholder="Write a To Do" className="textStyle" onChange={this.handleChange}/>
+              </div>
+            </div>
           </div>
         </div>
         <div className="row">
             <h3 className="col">Activity Type</h3>
         </div>
-
+        <div className="row">
+          <p className="col">Select one activity type that reflects your trip plans the best!</p>
+        </div>
         <div className="row whiteBG">
           <label className="col containerLabel">
           <input type="radio" name="activityType" value="sports" onChange={this.handleRadio} />

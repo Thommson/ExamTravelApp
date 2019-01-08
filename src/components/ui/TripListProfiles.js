@@ -1,6 +1,8 @@
 import React from 'react';
 import ExploreCard from './ExploreCard';
-
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
   const TripListProfiles = ({trips}) => {
 
     return (
@@ -17,4 +19,15 @@ import ExploreCard from './ExploreCard';
     );
   }
 
-  export default (TripListProfiles)
+  const mapStateToProps = (state) => {
+    return{
+      trips: state.firestore.ordered.trips
+    }
+  }
+
+  export default compose(
+    connect(mapStateToProps),
+    firestoreConnect(props => [
+      { collection: 'trips' }
+    ])
+  )(TripListProfiles)

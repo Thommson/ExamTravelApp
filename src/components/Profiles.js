@@ -7,11 +7,29 @@ import TripListProfiles from './ui/TripListProfiles';
 import firebase from 'firebase/app';
 
 class Profiles extends Component {
+  checkFollows = (e) => {
 
+      for(let f = 0; f <= this.props.user.followedBy.length; f++){
+
+        if(this.props.user.followedBy[f] === this.props.auth.uid){
+
+          document.getElementById(this.props.user.username).checked = true
+          break
+        } else {
+          document.getElementById(this.props.user.username).checked = false
+        }
+      }
+  }
     addToFollowList = (e) => {
-      firebase.firestore().collection('users').doc(this.props.auth.uid).update({
-        follows: firebase.firestore.FieldValue.arrayUnion(this.props.user.userId)
-      })
+      if( e.target.checked === true){
+        firebase.firestore().collection('users').doc(this.props.user.userId).update({
+          followedBy: firebase.firestore.FieldValue.arrayUnion(this.props.auth.uid)
+        })
+      } else {
+        firebase.firestore().collection('users').doc(this.props.user.userId).update({
+          followedBy: firebase.firestore.FieldValue.arrayRemove(this.props.auth.uid)
+        })
+      }
     }
     render(){
       const { auth, user, trips } = this.props;
@@ -19,9 +37,9 @@ class Profiles extends Component {
       console.log(this.props)
       if(user){
         return (
-          <div className="container-fluid">
+          <div onPointerMove={this.checkFollows} className="container-fluid">
 
-            <div className="row">
+            <div  className="row">
                 <div className="col h1Profile">
                      <h1 className="h1Profile">Profile</h1>
                 </div>
@@ -33,11 +51,13 @@ class Profiles extends Component {
                 </div>
 
                 <div className="col">
-                    <span className="username">{user.username}</span>
+                  <span className="username">{user.username}</span>
                 </div>
 
-                <div className="col">
-                    <button onClick={this.addToFollowList} className="buttons">Follow</button>
+                <div className="col" >
+                  <label>
+                    <input type="checkbox" id={user.username} onClick={this.addToFollowList} className="buttons" />Follow
+                  </label>
                 </div>
             </div>
 
@@ -71,13 +91,13 @@ class Profiles extends Component {
                 </div>
             </div>
 
-              <TripListProfiles trips={trips} />
+              <TripListProfiles onLoad={this.checkFollows} trips={trips} />
 
         </div>
         )
       } else {
         return(
-            <div>Loading...</div>
+            <div >Loading...</div>
         )
       }
     }
@@ -85,14 +105,14 @@ class Profiles extends Component {
 
 
 const mapStateToProps = (state, ownProps) => {
-
   const id = ownProps.match.params.id;
   const users = state.firestore.data.users;
   const user = users ? users[id] : null
   return{
     trips: state.firestore.ordered.trips,
     user: user,
-    auth: state.firebase.auth
+    auth: state.firebase.auth,
+    users: users
   }
 }
 
