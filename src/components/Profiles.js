@@ -39,15 +39,15 @@ class Profiles extends Component {
           <div onPointerMove={this.checkFollows} className="container-fluid">
 
             <div  className="row">
-                <div className="col h1Profile">
+                <div className="col">
                      <h1 className="h1Profile">Profile</h1>
                 </div>
             </div>
 
             <div className="row">
-                <div className="col">
-                    <img src="images/profilepic.png" className="profileImg" alt=""/>
-                </div>
+              <div className="col">
+                  <img src="images/profilepic.png" className="profileImg" alt="" />
+              </div>
 
                 <div className="col">
                   <span className="username">{user.username}</span>
@@ -76,7 +76,7 @@ class Profiles extends Component {
 
             <div className="row textCenter">
                 <div className="col">
-                    <span className="profTripPin">Created Trips</span>
+                    <span className="profTripPin activeTab">Created Trips</span>
                 </div>
             </div>
 
