@@ -116,7 +116,8 @@ border: 1px solid lightgray;
 .login-span-placement{
   text-align: center;
   height: 0;
-  padding: 10vh 0;
+  padding: 8vh 0 6vh 0;
+  font-size: 1.5em;
 }
 .login-card{
   background-color: white;
@@ -435,6 +436,8 @@ float: left;
   top: 100px;
   left: 0%;
   width: 100%;
+  box-sizing: border-box;
+  padding: 0 15vw;
   text-align: center;
 }
 .textStyle{
@@ -478,4 +481,10 @@ float: left;
   border-radius:3px;
   padding: 2% 10%;
   margin-top: 3%;
+}
+.loginButton{
+  margin-bottom: 4vh;
+}
+.no-account{
+  margin-bottom: 2vh;
 }
