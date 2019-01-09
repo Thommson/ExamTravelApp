@@ -1,25 +1,29 @@
 import React, { Component } from 'react';
 
-import TripList from './ui/TripList';
+import TripListTrending from './ui/TripListTrending';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
 import { Redirect } from 'react-router-dom';
 
-class Explore extends Component {
+class ExploreTrending extends Component {
   state = {
     activityType: ''
   }
-  handleTrendingLink = (e) => {
+  handleRecentLink = (e) => {
     e.preventDefault();
-    this.props.history.push('/ExploreTrending');
+    this.props.history.push('/Explore');
+    window.location.reload();
+  };
+  handleFollowedLink = (e) => {
+    e.preventDefault();
+    this.props.history.push('/ExploreFollowed');
     window.location.reload();
   }
   handleRadio = (e) => {
     this.setState({
       [e.target.name]: e.target.value
     })
-
   }
   render() {
     const { trips, auth } = this.props;
@@ -33,7 +37,6 @@ class Explore extends Component {
             </div>
 
             <div className="col">
-  
             </div>
 
         </div>
@@ -93,20 +96,20 @@ class Explore extends Component {
 
         <div className="row textCenter">
           <div className="col">
-              <span onClick={this.handleTrendingLink} className="profTripPin inactiveNavColor">Trending</span>
+              <span className="profTripPin">Trending</span>
           </div>
           <div className="col">
-              <span className="profTripPin">Recent</span>
+              <span onClick={this.handleRecentLink} className="profTripPin inactiveNavColor">Recent</span>
           </div>
         </div>
-        <TripList trips={trips} activityType={this.state.activityType}/>
+        <TripListTrending trips={trips} activityType={this.state.activityType}/>
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  console.log(state)
+  console.log(state);
   return{
     trips: state.firestore.ordered.trips,
     auth: state.firebase.auth
@@ -115,7 +118,7 @@ const mapStateToProps = (state) => {
 
 export default compose(
   connect(mapStateToProps),
-  firestoreConnect(props =>[
-    { collection: 'trips'}
+  firestoreConnect( [
+    { collection: 'trips', orderBy: ['likes', 'desc']}
   ])
-)(Explore)
+)(ExploreTrending)

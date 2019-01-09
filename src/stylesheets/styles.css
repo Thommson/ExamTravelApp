@@ -2,26 +2,103 @@
   padding: 0;
   margin: 0;
 }
+body{
+  font-family: 'Roboto', sans-serif;
+  color: #113A52;
+}
+#todoRow2{
+  display: none;
+}
+#todoRow3{
+  display: none;
+}
+#todoRow4{
+  display: none;
+}
+#todoRow5{
+  display: none;
+}
 /* Navbar */
 .navbar{
   position: fixed;
   width: 100%;
   bottom: 0;
-  background-color: grey;
+  background-color: #fff;
 }
 .navbar-item{
 display: inline-block;
-width: calc(100% / 3);
+width: calc(100% / 4);
 float: left;
 text-align: center;
-padding: 3vh 0;
+padding: 0.5vh 0;
 color: white;
 box-sizing: border-box;
-border: 1px solid white;
+border: 1px solid lightgray;
 }
 .width100{
   width: 100%;
 }
+.svgSize{
+  fill: #000;
+  width: 40px;
+  height: 40px;
+}
+.svgButton{
+  fill: #fff;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  float: right;
+  cursor: pointer;
+}
+.update{
+  float: left;
+}
+.logoutSVG{
+  height: 40px;
+  padding: 6px 0 2px 0;
+}
+
+/* Activities filter */
+.containerLabel {
+  display: block;
+  position: relative;
+  width: calc(100% / 5);
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.2em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.containerLabel input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.iconChecked{
+  fill: #113a52;;
+  background-color: lightgray;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  width: 11.5vw;
+}
+.containerLabel input:checked ~ .iconChecked {
+  background-color: lightseagreen;
+  fill: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+.checkboxFontStyle{
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
 /* Login */
 .green-background{
   height: 100vh;
@@ -61,13 +138,8 @@ border: 1px solid white;
 
 /* Profile page */
 
-body{
-  background-color: lightgray;
-  font-family: 'Roboto', sans-serif;
-  color: #113A52;
-}
 .grayBackground{
-  background-color:#fff;
+  background-color: #F1F7F6;
   padding-bottom: 3%;
 }
 .profileImg{
@@ -90,43 +162,61 @@ body{
   color: #00C3B6;
 }
 .h1Profile{
-  margin: 4% 0px;
+  margin: 3% 0px;
   width: 100%;
+  font-weight: Bold;
 }
 .profileCount{
   font-size: 1.3em;
 }
+.trip-list-padding{
+  padding-bottom: 100px;
+}
 .profTripPin{
   color: #00C3B6;
+  border-bottom: 2px solid #00C3B6;
   font-size: 1.15em;
   text-align: center;
 }
 /* Trip Card */
 .card{
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0px 4px 8px 2px rgba(0,0,0,0.2);
   border-radius: 12px;
-  margin: 5% 0px;
+  margin: 8% 0 0 0;
   background-color: #fff;
+}
+.col-10{
+  padding: 0;
 }
 .cardImg{
   width: 100%;
   border-radius: 12px 5px 0 0;
 }
-.cardDescrip{
-  padding: 5% 5%;
+.card-margin{
+  width: 100%;
+  box-sizing: border-box;
+  margin: 4%;
 }
-.cardLikes{
-  padding: 3% 3%;
-  text-align: center;
+.card-description-margin{
+  margin: 0 0 5% 0;
 }
+
 .usernameItalic{
   font-style: italic;
+  color: #00C3B6;
 }
-.flagImg{
+.text-align-right{
+  margin-top: 3.5%;
+}
+.flagPlacement{
+  position: relative;
+}
+.flagImgTrip{
   width: 12vw;
   height: 12vw;
   border-radius: 50%;
-  float: right;
+  padding: 0;
+  margin: 0;
 }
 .countryVisited{
   font-size: 1.2em;
@@ -138,24 +228,167 @@ body{
   padding: 0;
   width: 100%;
 }
-
+.locationDescr{
+  padding: 0 2%;
+}
 .textCenter{
   text-align: center;
   padding-bottom: 6%;
 }
-.profTripPin{
-  border-bottom: 3px solid #00C3B6;
+.buttonCard{
+  float: right;
 }
-.likeButton{
-border-radius: 50px/50px;
-border: solid 5px #00C3B6;
-background-color: #00C3B6;
-box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-width: 10vw;
-height: 10vh;
+/* pin and like */
+.containerLabelLike{
+  display: block;
+  position: relative;
+  box-sizing: border-box;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-.likeB{
-margin-left: 10%;
+.containerLabelLike input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.likePinSvg{
+  fill: #113a52;;
+  background-color: lightgray;
+  width: 7vw;
+  padding: 5px;
+  border-radius: 50px/50px;
+  margin-right: 2px;
+}
+.containerLabelLike input:checked ~ .likePinSvg {
+  background-color: lightseagreen;
+  fill: #fff;
+  width: 7vw;
+  padding: 5px;
+  border-radius: 50px/50px;
+  margin-right: 2px;
+}
+.pinAmount{
+  padding-right: 6px;
+}
+
+/* Activities filter */
+.containerLabel {
+  display: block;
+  position: relative;
+  width: calc(100% / 5);
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.2em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  margin-bottom: 1.4em;
+  margin-top: 0.6em;
+}
+.containerLabel input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.iconChecked{
+  fill: #113a52;;
+  background-color: lightgray;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  width: 11.5vw;
+}
+.containerLabel input:checked ~ .iconChecked {
+  background-color: lightseagreen;
+  fill: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+.checkboxFontStyle{
+  font-size: 0.7em;
+  font-weight: bold;
+}
+/* FullTripCard */
+.greenBG{
+  background-color: lightseagreen;
+}
+.whiteBG{
+  background-color: #fff;
+  height: 100%;
+}
+.arrowSVG{
+fill: #fff;
+width: 40px;
+height: 40px;
+float: left;
+}
+.h1FullTripCard{
+  color: #fff;
+  margin: 10% 0%;
+}
+.likeAmount{
+  margin-left: 5%;
+  color: #fff;
+}
+.pinB{
+  margin-left: 15%;
+  color: #fff;
+}
+.userCol{
+  text-align: center;
+}
+.user{
+  border-bottom: 2px solid #fff;
+  color: #fff;
+}
+.userImg{
+  width:7vw;
+  border-radius: 50%;
+  margin: 5% 3% 0 0;
+}
+.fullCardTitle{
+  padding-top: 5%;
+}
+.fullCardDescr{
+  margin: 2%;
+  border-left: 5px solid lightseagreen;
+  padding: 0 2%;
+}
+.flagImgFullTrip{
+  width: 12vw;
+  height: 12vw;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 65%;
+  transform: translate(100%, -15%);
+}
+/* to do */
+.toDo{
+  width: 80%;
+  float: left;
+  margin: 0.3% 4.5%;
+
+}
+
+/* Album card */
+.cardLocation{
+  font-style: italic;
+  padding: 1em;
+}
+.cardDescr{
+  margin-top: 2%;
+  padding: 1em;
 }
 
 .h1Explore {
@@ -172,8 +405,54 @@ margin-left: 10%;
   font-weight: 100;
 }
 
+.cardExploreViews {
+
+}
+
 .exploreSearch {
   margin: 2% 0;
   color: #113A52;
   width: 100%;
+}
+/* Create Trip */
+.whiteBgCreateTrip{
+  background-color: #fff;
+}
+.textStyle{
+  border: none;
+  box-shadow: 1px 4px 6px 1px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  padding: 2%;
+  margin: 1% 0 6% 0;
+}
+.createToDoButton{
+  background-color: lightseagreen;
+  color: #fff;
+  border: none;
+  box-shadow: 1px 4px 6px 1px rgba(0,0,0,0.2);
+  border-radius:50%;
+  padding: 1% 2%;
+  margin-right: 2%;
+}
+.createToDo{
+  margin-left: 3%;
+}
+.submitButtons{
+  background-color: lightseagreen;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  box-shadow: 1px 4px 6px 1px rgba(0,0,0,0.2);
+  border-radius:3px;
+  padding: 2% 10%;
+  margin-top: 3%;
+}
+
+.inactiveNavColor{
+  color: #D6D6D6;
+  border-bottom: none;
+}
+
+.whitespace {
+  margin-top: 1.4em;
 }
