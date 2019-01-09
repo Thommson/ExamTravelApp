@@ -46,7 +46,11 @@ class ExploreTrending extends Component {
                  <h1 className="h2Explore">Activities</h1>
             </div>
         </div>
-
+        <div className="row">
+            <div className="col">
+                <p className="activities-para">Select an activity to see the trips that you want!</p>
+            </div>
+        </div>
         <div className="row whiteBG">
           <label className="col containerLabel">
           <input type="radio" name="activityType" value="sports" onChange={this.handleRadio} />
