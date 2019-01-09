@@ -44,17 +44,14 @@ class Login extends Component {
             <div className="row">
               <div className="col">
                 <label htmlFor="email">Email</label><br></br>
-                <input type="text" id="email" placeholder="Email" className="width100" onChange={this.handleChange}/>
+                <input type="text" id="email" placeholder="Email" className="width100 textStyle" onChange={this.handleChange}/>
               </div>
             </div>
             <div className="row">
               <div className="col">
                 <label htmlFor="password">Password</label><br></br>
-                <input type="text" id="password" placeholder="Password" className="width100" onChange={this.handleChange}/>
+                <input type="text" id="password" placeholder="Password" className="width100 textStyle" onChange={this.handleChange}/>
               </div>
-            </div>
-            <div className="row">
-              <span className="col">Forgot password?</span>
             </div>
             <div className="row">
               <p className="col">
@@ -63,10 +60,10 @@ class Login extends Component {
             </div>
             <div className="row">
               <div className="col">
-                <button className="width100">Login</button>
+                <button className="width100 submitButtons loginButton">Login</button>
               </div>
             </div>
-            <div className="row">
+            <div className="row no-account">
               <div className="col">
                 <Link to="/Register" className="width100">I don't have an account...</Link>
               </div>
