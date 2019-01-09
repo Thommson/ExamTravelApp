@@ -251,6 +251,46 @@ border: 1px solid lightgray;
   width: 100%;
   float: right;
 }
+/* Following button */
+.containerButton {
+  display: block;
+  position: relative;
+  width: calc(100% / 5);
+  box-sizing: border-box;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
+  font-size: 1.2em;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.containerButton input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+.iconChecked{
+  fill: #113a52;;
+  background-color: lightgray;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+  width: 11.5vw;
+}
+.containerButton input:checked ~ .iconChecked {
+  background-color: lightseagreen;
+  fill: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
+}
+.checkboxFontStyle{
+  font-size: 0.7em;
+  font-weight: bold;
+}
+
 /* pin and like */
 .containerLabelLike{
   display: block;

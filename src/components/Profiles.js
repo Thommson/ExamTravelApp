@@ -53,12 +53,14 @@ class Profiles extends Component {
                   <span className="username">{user.username}</span>
                 </div>
 
-                <div className="col" >
-                  <label>
-                    <input type="checkbox" id={user.username} onClick={this.addToFollowList} className="buttons" />Follow
+                  <label className="col containerButton">
+                  <input type="checkbox" id={user.username} onClick={this.addToFollowList} className="buttons" />
+                  <div className="iconChecked">Follow</div>
+                 
                   </label>
+          
                 </div>
-            </div>
+    
 
             <div className="row">
                 <div className="col">
