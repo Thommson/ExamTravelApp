@@ -13,9 +13,11 @@ class Profiles extends Component {
         if(this.props.user.followedBy[f] === this.props.auth.uid){
 
           document.getElementById(this.props.user.username).checked = true
+          document.getElementById('followText').innerText = 'Following'
           break
         } else {
           document.getElementById(this.props.user.username).checked = false
+          document.getElementById('followText').innerText = 'Follow'
         }
       }
   }
@@ -55,12 +57,12 @@ class Profiles extends Component {
 
                   <label className="col containerButton">
                   <input type="checkbox" id={user.username} onClick={this.addToFollowList} className="buttons" />
-                  <div className="iconChecked">Follow</div>
-                 
+                  <div id="followText" className="iconChecked">Follow</div>
+
                   </label>
-          
+
                 </div>
-    
+
 
             <div className="row">
                 <div className="col">
