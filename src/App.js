@@ -19,7 +19,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <Switch>
-            <Route path='/' component={ Explore } exact />
+            <Route path='/' component={ ExploreTrending } exact />
             <Route path='/trip/:id' component={ FullTripCard } />
             <Route path='/Register' component={ Register } />
             <Route path='/Login' component={ Login } />
