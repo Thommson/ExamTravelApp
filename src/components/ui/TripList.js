@@ -12,8 +12,6 @@ import { compose } from 'redux';
           <div className="warn">
             Sorry... There are no trips with the selected activity...
           </div>
-
-
           { trips && trips.map(trip => {
             return(
                 <ExploreCard trip={trip} />
