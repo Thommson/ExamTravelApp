@@ -426,12 +426,26 @@ float: left;
 .whiteBgCreateTrip{
   background-color: #fff;
 }
+.warn-position{
+  position: relative;
+  min-height: 60vh;
+}
+.warn{
+  position: absolute;
+  top: 100px;
+  left: 0%;
+  width: 100%;
+  text-align: center;
+}
 .textStyle{
   border: none;
   box-shadow: 1px 4px 6px 1px rgba(0,0,0,0.2);
   border-radius: 4px;
   padding: 2%;
   margin: 1% 0 6% 0;
+}
+.activities-para{
+  padding: 1% 0 8% 0;
 }
 .createToDoButton{
   background-color: lightseagreen;

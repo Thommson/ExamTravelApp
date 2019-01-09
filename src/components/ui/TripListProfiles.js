@@ -7,7 +7,10 @@ import { compose } from 'redux';
 
     return (
       <div className="row grayBackground trip-list-padding">
-        <div className="col">
+        <div className="col warn-position">
+        <div className="warn">
+          Sorry... There are no trips here...
+        </div>
           { trips && trips.map(trip => {
             return(
                 <ExploreCard trip={trip} />
@@ -28,6 +31,6 @@ import { compose } from 'redux';
   export default compose(
     connect(mapStateToProps),
     firestoreConnect(props => [
-    
+
     ])
   )(TripListProfiles)
