@@ -86,15 +86,13 @@ border: 1px solid lightgray;
 }
 .iconChecked{
   fill: #113a52;;
+  padding: 10px;
   background-color: lightgray;
-  border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-  width: 11.5vw;
 }
 .containerLabel input:checked ~ .iconChecked {
   background-color: lightseagreen;
   fill: #fff;
-  border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
 .checkboxFontStyle{
@@ -276,14 +274,11 @@ border: 1px solid lightgray;
 .iconChecked{
   fill: #113a52;;
   background-color: lightgray;
-  border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-  width: 11.5vw;
 }
 .containerButton input:checked ~ .iconChecked {
   background-color: lightseagreen;
   fill: #fff;
-  border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
 .checkboxFontStyle{
@@ -355,14 +350,12 @@ border: 1px solid lightgray;
 .iconChecked{
   fill: #113a52;;
   background-color: lightgray;
-  border-radius: 12px;
+  border-radius: 100px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
-  width: 11.5vw;
 }
 .containerLabel input:checked ~ .iconChecked {
   background-color: lightseagreen;
   fill: #fff;
-  border-radius: 12px;
   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.5);
 }
 .checkboxFontStyle{
