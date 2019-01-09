@@ -28,12 +28,12 @@ class Explore extends Component {
     return (
       <div className="container-fluid">
         <div className="row">
-            <div className="col h1Profile">
-                 <h1 className="h1Profile">Explore</h1>
+            <div className="col">
+                 <h1 className="h1Explore">Explore</h1>
             </div>
 
             <div className="col">
-  
+
             </div>
 
         </div>
@@ -96,7 +96,7 @@ class Explore extends Component {
               <span onClick={this.handleTrendingLink} className="profTripPin">Trending</span>
           </div>
           <div className="col">
-              <span className="profTripPin">Recent</span>
+              <span className="profTripPin activeTab">Recent</span>
           </div>
         </div>
         <TripList trips={trips} activityType={this.state.activityType}/>
@@ -116,6 +116,6 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect(props =>[
-    { collection: 'trips'}
+    { collection: 'trips', orderBy: ['createdAt', 'desc']}
   ])
 )(Explore)

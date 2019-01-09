@@ -29,7 +29,6 @@ import { compose } from 'redux';
   export default compose(
     connect(mapStateToProps),
     firestoreConnect(props => [
-      
-
+      { collection: 'trips', orderBy: ['likes', 'desc'], where: [['activityType', '==', props.activityType]]}
     ])
   )(TripListTrending)

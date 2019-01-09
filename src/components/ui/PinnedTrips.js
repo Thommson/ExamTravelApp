@@ -29,6 +29,6 @@ const mapStateToProps = (state) => {
 export default compose(
   connect(mapStateToProps),
   firestoreConnect(props => [
-    { collection: 'trips', where: [['pinnedBy', 'array-contains', props.auth.uid]] }
+    { collection: 'trips', where: [['pinnedBy', 'array-contains', props.auth.uid]], orderBy: ['createdAt', 'desc']}
   ])
 )(PinnedTrips)

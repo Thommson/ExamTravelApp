@@ -1,6 +1,4 @@
 import React, {Component} from 'react';
-import ToDoChecklist from './ui/ToDoChecklist';
-import AlbumCard from './ui/AlbumCard';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux'
@@ -19,11 +17,12 @@ class FullTripCard extends Component {
         <div className="container-fluid whiteBG">
           <div className="row greenBG">
               <div className="col userCol">
-
+              <Link to={'/Explore/'}>
               <svg id='Layer_1' className="arrowSVG" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
                       <path d='M14.9,6.7c-0.4-0.4-1-0.4-1.4,0l-4.6,4.6c-0.4,0.4-0.4,1,0,1.4l4.6,4.6c0.4,0.4,1,0.4,1.4,0c0.4-0.4,0.4-1,0-1.4L11,12	l3.9-3.9C15.3,7.7,15.3,7.1,14.9,6.7z'
                       />
                   </svg>
+                </Link>
 
 
                   <img src="images/profilepic.png" className="userImg" alt=""/>
@@ -45,9 +44,9 @@ class FullTripCard extends Component {
 
           <div className="row greenBG">
               <div className="col-m">
-                  <span className="pinB">Lik</span>
+                  <span className="pinB">Likes</span>
                   <span className="likeAmount">{trip.likes}</span>
-                  <span className="pinB">Pin</span>
+                  <span className="pinB">Pins</span>
                   <span className="likeAmount">{trip.pins}</span>
               </div>
            </div>
@@ -85,26 +84,14 @@ class FullTripCard extends Component {
              </div>
          </form>
 
-
           <div className="row">
               <div className="col">
                   <h3 className="fullCardTitle">Tips</h3>
                   <p className="fullCardDescr">
-                      Make sure you bring clothes for all weather.
-                      The weather can change very quickly so be prepared for everything.
+                      {trip.tips}
                   </p>
               </div>
           </div>
-
-          <div className="row">
-              <div className="col">
-                  <h3 className="fullCardTitle">Album</h3>
-
-              </div>
-          </div>
-
-          <AlbumCard />
-
       </div>
       )
   } else {

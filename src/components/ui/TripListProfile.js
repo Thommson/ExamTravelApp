@@ -1,17 +1,16 @@
 import React from 'react';
-import ExploreCard from './ExploreCard';
+import TripCard from './TripCard';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-
-  const TripList = ({trips, activityType}) => {
+  const TripListProfile = ({trips}) => {
 
     return (
       <div className="row grayBackground trip-list-padding">
         <div className="col">
           { trips && trips.map(trip => {
             return(
-                <ExploreCard trip={trip} />
+                <TripCard trip={trip} />
             )
           })}
 
@@ -29,6 +28,6 @@ import { compose } from 'redux';
   export default compose(
     connect(mapStateToProps),
     firestoreConnect(props => [
-{ collection: 'trips', orderBy: ['createdAt', 'desc'] , where: [['activityType', '==', props.activityType]]}
+
     ])
-  )(TripList)
+  )(TripListProfile)

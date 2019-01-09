@@ -13,9 +13,12 @@ class CreateTrip extends Component {
     activityType: '',
     likedBy:[],
     pinnedBy:[],
+    tips: 'There are no tips yet...',
     todo1: '',
     todo2: '',
-    todo3: ''
+    todo3: '',
+    todo4: '',
+    todo5: ''
   }
 
   handleChange = (e) => {
@@ -54,7 +57,7 @@ class CreateTrip extends Component {
       <form onSubmit={this.handleSubmit} className="container-fluid">
 
         <div className="row">
-          <div className="col h1Profile">
+          <div className="col">
           <h1 className="h1Profile">Create Trip</h1>
           </div>
         </div>
