@@ -21,6 +21,12 @@ body{
 #todoRow5{
   display: none;
 }
+.container-fluid{
+  max-width: 500px;
+}
+.add-margin{
+  margin-bottom: 10vh;
+}
 /* Navbar */
 .navbar{
   position: fixed;
@@ -215,6 +221,9 @@ border: 1px solid #F1F7F6;
 
 .usernameItalic{
   font-style: italic;
+  display: block;
+  text-align: right;
+  float: right;
 }
 .text-align-right{
   margin-top: 3.5%;

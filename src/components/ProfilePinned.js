@@ -83,7 +83,6 @@ class Profile extends Component {
 }
 
 const mapStateToProps = (state, ownProps) => {
-  console.log(state)
   const id = state.firebase.auth.uid;
   const users = state.firestore.data.users;
   const user = users ? users[id] : null

@@ -68,14 +68,7 @@ class TripCard extends Component {
   render(){
     const { trip, auth } = this.props;
     return (
-      <div onLoad={this.checkLikes} onPointerMove={this.checkLikes} className="card">
-      <Link to={'/Trip/'+ trip.id} key={trip.id}>
-        <div onLoad={this.checkPins} onPointerMove={this.checkPins} className="row">
-            <div className="col">
-                <img src="images/norway.jpg" className="cardImg" alt=""/>
-            </div>
-        </div>
-      </Link>
+      <div onLoad={this.checkLikes} onPointerMove={this.checkLikes} onPointerEnter={this.checkPins} className="card">
         <div className="row">
           <div className="col card-margin">
           <Link to={'/Trip/'+ trip.id} key={trip.id}>
@@ -86,7 +79,7 @@ class TripCard extends Component {
                 </div>
 
                 <div className="col-2">
-                    <img src="images/flag.png" className="flagImgTrip" alt=""/>
+          
                 </div>
             </div>
             </Link>

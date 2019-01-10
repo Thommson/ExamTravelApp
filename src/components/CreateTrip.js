@@ -184,7 +184,7 @@ class CreateTrip extends Component {
             <div className="checkboxFontStyle">Nature</div>
           </label>
         </div>
-        <div className="row">
+        <div className="row add-margin">
           <div className="col">
             <button type="submit" className="width100 submitButtons" onClick={this.postTrip}>Let's Go!</button>
           </div>
