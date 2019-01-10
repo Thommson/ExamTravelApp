@@ -79,7 +79,7 @@ class TripCard extends Component {
                 </div>
 
                 <div className="col-2">
-          
+
                 </div>
             </div>
             </Link>

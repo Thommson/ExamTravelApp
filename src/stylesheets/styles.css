@@ -23,6 +23,7 @@ body{
 }
 .container-fluid{
   max-width: 500px;
+  padding-bottom: 30%;
 }
 .add-margin{
   margin-bottom: 10vh;
