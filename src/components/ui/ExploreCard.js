@@ -68,14 +68,7 @@ class ExploreCard extends Component {
   render(){
     const { trip, auth } = this.props;
     return (
-      <div onLoad={this.checkLikes} onPointerMove={this.checkLikes} className="card">
-      <Link to={'/Trip/'+ trip.id} key={trip.id}>
-        <div onLoad={this.checkPins} onPointerMove={this.checkPins} className="row">
-            <div className="col">
-                <img src="images/norway.jpg" className="cardImg" alt=""/>
-            </div>
-        </div>
-      </Link>
+      <div onLoad={this.checkLikes} onPointerEnter={this.checkPins} onPointerMove={this.checkLikes} className="card">
         <div className="row">
           <div className="col card-margin">
           <Link to={'/Trip/'+ trip.id} key={trip.id}>
@@ -86,12 +79,12 @@ class ExploreCard extends Component {
                 </div>
 
                 <div className="col-2">
-                    <img src="images/flag.png" className="flagImgTrip" alt=""/>
+                  
                 </div>
             </div>
             </Link>
             <div className="row">
-                <div className="col-9">
+                <div className="col">
                 <label className="containerLabelLike">
                     <input type="checkbox" id={trip.id} onClick={this.handleLike}/>
                         <svg id='Layer_1' className="likePinSvg" xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
@@ -113,8 +106,8 @@ class ExploreCard extends Component {
                 </label>
             </div>
 
-            <div className="col-3 text-align-right">
-                <Link to={'/Profiles/' + trip.authorId} className="usernameItalic">{trip.username}</Link>
+            <div className="col ">
+                <Link to={'/Profiles/' + trip.authorId} className="usernameItalic width100 text-align-right">{trip.username}</Link>
             </div>
             </div>
         </div>

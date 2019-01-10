@@ -21,6 +21,12 @@ body{
 #todoRow5{
   display: none;
 }
+.container-fluid{
+  max-width: 500px;
+}
+.add-margin{
+  margin-bottom: 10vh;
+}
 /* Navbar */
 .navbar{
   position: fixed;
@@ -194,6 +200,8 @@ border: 1px solid #F1F7F6;
   border-radius: 12px;
   margin: 8% 0 0 0;
   background-color: #fff;
+  position: relative;
+  z-index: 2;
 }
 .col-10{
   padding: 0;
@@ -213,6 +221,9 @@ border: 1px solid #F1F7F6;
 
 .usernameItalic{
   font-style: italic;
+  display: block;
+  text-align: right;
+  float: right;
 }
 .text-align-right{
   margin-top: 3.5%;
@@ -464,6 +475,7 @@ float: left;
 .warn-position{
   position: relative;
   min-height: 60vh;
+  z-index: 0;
 }
 .warn{
   position: absolute;
@@ -473,6 +485,7 @@ float: left;
   box-sizing: border-box;
   padding: 0 15vw;
   text-align: center;
+  z-index: 1;
 }
 .textStyle{
   border: none;
